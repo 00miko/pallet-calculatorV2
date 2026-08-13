@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <title>Pallet Calculator V1 iPhone</title>
+  <style>
+    *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+    body{margin:0;background:#f5f7fb;color:#172033;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}
+    .wrap{max-width:780px;margin:0 auto;padding:12px}
+    .card{background:#fff;border:1px solid #dfe3ea;border-radius:16px;padding:16px}
+    h1{margin:0 0 6px;font-size:24px}
+    .sub{color:#6b7280;font-size:14px;margin-bottom:16px;line-height:1.4}
+    .product{border:1px solid #dfe3ea;border-radius:12px;padding:12px;margin-bottom:10px}
+    .top{display:flex;justify-content:space-between;gap:10px;margin-bottom:8px}
+    .name{font-weight:700}
+    .pack{font-size:12px;color:#6b7280;white-space:nowrap}
+    .inputrow{display:flex;align-items:center;gap:8px}
+    input{width:100%;font-size:18px;padding:12px;border:1px solid #cfd5df;border-radius:10px;-webkit-appearance:none}
+    .unit{color:#6b7280;font-size:14px}
+    .actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}
+    button{width:100%;padding:14px;border:0;border-radius:11px;font-size:16px;font-weight:800;-webkit-appearance:none;appearance:none}
+    #calcBtn{background:#1f6feb;color:#fff}
+    #clearBtn{background:#e9edf4;color:#24324a}
+    .result{margin-top:18px;padding:18px;border:1px solid #cfe4ff;background:#eef6ff;border-radius:14px;text-align:center}
+    .result strong{display:block;font-size:24px}
+    .meta{margin-top:6px;color:#6b7280;font-size:13px}
+    .details{margin-top:16px;border:1px solid #dfe3ea;border-radius:12px;overflow:hidden}
+    .details h2{font-size:15px;margin:0;padding:12px 14px;background:#f8fafc;border-bottom:1px solid #dfe3ea}
+    #details{padding:8px 14px}
+    .drow{padding:8px 0;border-bottom:1px dashed #e5e7eb;font-size:14px}
+    .drow:last-child{border-bottom:0}
+    .note{margin-top:14px;color:#6b7280;font-size:12px;line-height:1.45}
+    @media(max-width:480px){
+      .actions{grid-template-columns:1fr}
+      .top{align-items:flex-start}
+      h1{font-size:22px}
+    }
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <div class="card">
+    <h1>PALLET CALCULATOR V1</h1>
+    <div class="sub">Wpisz łączną liczbę sztuk dla każdego typu opakowania.</div>
+
+    <div class="product"><div class="top"><div class="name">Puszka 500 ml</div><div class="pack">24 szt./zgrz.</div></div><div class="inputrow"><input id="can500" type="number" min="0" inputmode="numeric" placeholder="0"><span class="unit">szt.</span></div></div>
+    <div class="product"><div class="top"><div class="name">Puszka 330 ml</div><div class="pack">24 szt./zgrz.</div></div><div class="inputrow"><input id="can330" type="number" min="0" inputmode="numeric" placeholder="0"><span class="unit">szt.</span></div></div>
+    <div class="product"><div class="top"><div class="name">PET 1.5 L</div><div class="pack">6 szt./zgrz.</div></div><div class="inputrow"><input id="pet15" type="number" min="0" inputmode="numeric" placeholder="0"><span class="unit">szt.</span></div></div>
+    <div class="product"><div class="top"><div class="name">PET 0.85 L</div><div class="pack">6 szt./zgrz.</div></div><div class="inputrow"><input id="pet085" type="number" min="0" inputmode="numeric" placeholder="0"><span class="unit">szt.</span></div></div>
+    <div class="product"><div class="top"><div class="name">Izotonik 750 ml</div><div class="pack">12 szt./zgrz.</div></div><div class="inputrow"><input id="iso750" type="number" min="0" inputmode="numeric" placeholder="0"><span class="unit">szt.</span></div></div>
+    <div class="product"><div class="top"><div class="name">Woda 500 ml</div><div class="pack">6 szt./zgrz.</div></div><div class="inputrow"><input id="water500" type="number" min="0" inputmode="numeric" placeholder="0"><span class="unit">szt.</span></div></div>
+    <div class="product"><div class="top"><div class="name">Wafle standard</div><div class="pack">12 szt./zgrz.</div></div><div class="inputrow"><input id="wafers" type="number" min="0" inputmode="numeric" placeholder="0"><span class="unit">szt.</span></div></div>
+    <div class="product"><div class="top"><div class="name">Wafle cebulka / Texas BBQ</div><div class="pack">12 szt./zgrz.</div></div><div class="inputrow"><input id="wafersSpecial" type="number" min="0" inputmode="numeric" placeholder="0"><span class="unit">szt.</span></div></div>
+
+    <div class="actions">
+      <button id="calcBtn" type="button">OBLICZ PALETY</button>
+      <button id="clearBtn" type="button">WYCZYŚĆ</button>
+    </div>
+
+    <div class="result">
+      <strong id="resultText">SZACOWANA LICZBA PALET: —</strong>
+      <div class="meta" id="resultMeta"></div>
+    </div>
+
+    <div class="details">
+      <h2>Przeliczenie zamówienia</h2>
+      <div id="details">Brak danych.</div>
+    </div>
+
+    <div class="note">Model V1: 95% wykorzystania powierzchni warstwy i 160 cm roboczej wysokości. Wynik orientacyjny.</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var PRODUCTS = [
+    {key:"can500",name:"Puszka 500 ml",pack:24,h:18,perLayer:9},
+    {key:"can330",name:"Puszka 330 ml",pack:24,h:12,perLayer:9},
+    {key:"pet15",name:"PET 1.5 L",pack:6,h:33,perLayer:19},
+    {key:"pet085",name:"PET 0.85 L",pack:6,h:25,perLayer:21},
+    {key:"iso750",name:"Izotonik 750 ml",pack:12,h:27,perLayer:17},
+    {key:"water500",name:"Woda 500 ml",pack:6,h:16,perLayer:25},
+    {key:"wafers",name:"Wafle standard",pack:12,h:20,perLayer:8},
+    {key:"wafersSpecial",name:"Wafle cebulka / Texas BBQ",pack:12,h:20,perLayer:8}
+  ];
+
+  var SURFACE_LIMIT = 0.95;
+  var HEIGHT_LIMIT = 160;
+
+  function estimate(counts){
+    var demand = 0;
+    var i, p;
+    for(i=0;i<PRODUCTS.length;i++){
+      p = PRODUCTS[i];
+      demand += counts[i] * (1 / p.perLayer) * p.h;
+    }
+    if(demand <= 0){ return 0; }
+    return Math.ceil(demand / (SURFACE_LIMIT * HEIGHT_LIMIT));
+  }
+
+  function calculate(){
+    var counts = [];
+    var rows = [];
+    var hasError = false;
+    var i, p, el, raw, pieces, shrinks, remainder;
+
+    for(i=0;i<PRODUCTS.length;i++){
+      p = PRODUCTS[i];
+      el = document.getElementById(p.key);
+      raw = el.value;
+      pieces = raw === "" ? 0 : parseInt(raw,10);
+
+      if(isNaN(pieces) || pieces < 0 || String(pieces) !== String(parseInt(raw || "0",10))){
+        hasError = true;
+        el.style.borderColor = "#dc2626";
+        counts.push(0);
+        continue;
+      }
+
+      el.style.borderColor = "#cfd5df";
+      shrinks = pieces === 0 ? 0 : Math.ceil(pieces / p.pack);
+      counts.push(shrinks);
+
+      if(pieces > 0){
+        remainder = pieces % p.pack;
+        rows.push("<div class='drow'><strong>" + p.name + "</strong><br>" +
+          pieces + " szt. → " + shrinks + " zgrz." +
+          (remainder ? " (zaokrąglono w górę)" : "") + "</div>");
+      }
+    }
+
+    if(hasError){
+      document.getElementById("resultText").innerHTML = "BŁĄD DANYCH";
+      document.getElementById("resultMeta").innerHTML = "Wpisz nieujemne liczby całkowite.";
+      return;
+    }
+
+    var pallets = estimate(counts);
+    document.getElementById("resultText").innerHTML = "SZACOWANA LICZBA PALET: " + pallets;
+    document.getElementById("resultMeta").innerHTML =
+      pallets === 0 ? "Brak produktów w zamówieniu." : "Model pojemnościowy z marginesem bezpieczeństwa 5%.";
+    document.getElementById("details").innerHTML = rows.length ? rows.join("") : "Brak danych.";
+  }
+
+  function clearAll(){
+    var i, el;
+    for(i=0;i<PRODUCTS.length;i++){
+      el = document.getElementById(PRODUCTS[i].key);
+      el.value = "";
+      el.style.borderColor = "#cfd5df";
+    }
+    document.getElementById("resultText").innerHTML = "SZACOWANA LICZBA PALET: —";
+    document.getElementById("resultMeta").innerHTML = "";
+    document.getElementById("details").innerHTML = "Brak danych.";
+  }
+
+  function init(){
+    var c = document.getElementById("calcBtn");
+    var r = document.getElementById("clearBtn");
+
+    if(c.addEventListener){
+      c.addEventListener("click", calculate, false);
+      c.addEventListener("touchend", function(e){ e.preventDefault(); calculate(); }, false);
+      r.addEventListener("click", clearAll, false);
+      r.addEventListener("touchend", function(e){ e.preventDefault(); clearAll(); }, false);
+    }else{
+      c.onclick = calculate;
+      r.onclick = clearAll;
+    }
+  }
+
+  if(document.readyState === "loading"){
+    document.addEventListener("DOMContentLoaded", init, false);
+  }else{
+    init();
+  }
+})();
+</script>
+</body>
+</html>
