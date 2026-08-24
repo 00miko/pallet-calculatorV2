@@ -4,365 +4,118 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<title>DZIK Pallet Calculator V2</title>
+<meta name="theme-color" content="#0b0d0f">
+<title>DZIK Pallet Calculator V3</title>
 <style>
-:root{
-  --red:#e30613;
-  --red-dark:#b8000b;
-  --black:#0b0d0f;
-  --ink:#17191c;
-  --muted:#6b6f76;
-  --line:#e6e7e9;
-  --soft:#f6f6f7;
-  --white:#fff;
-}
+:root{--red:#e30613;--red-dark:#b90410;--black:#0b0d0f;--ink:#17191c;--muted:#70747b;--line:#e6e7e9;--white:#fff}
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-html,body{margin:0;padding:0;background:#efeff0;color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}
-body{min-height:100vh}
-.wrap{max-width:920px;margin:0 auto;padding:18px 12px 36px}
-.app{background:var(--white);border:1px solid #dedfe2;border-radius:20px;overflow:hidden;box-shadow:0 12px 32px rgba(0,0,0,.06)}
-.header{
-  background:var(--white);
-  padding:22px 20px 18px;
-  border-bottom:4px solid var(--red);
-}
-.logo{
-  display:block;
-  width:min(360px,82%);
-  max-height:82px;
-  object-fit:contain;
-  object-position:left center;
-  margin-bottom:16px;
-}
-.headline-row{display:flex;justify-content:space-between;gap:14px;align-items:flex-end}
-h1{margin:0;font-size:28px;line-height:1.1;letter-spacing:-.02em;color:var(--black)}
-.version{font-size:12px;font-weight:800;letter-spacing:.08em;color:var(--red);text-transform:uppercase;white-space:nowrap}
-.sub{margin-top:6px;color:var(--muted);font-size:14px;line-height:1.5}
-.content{padding:18px}
-.tip{
-  background:#fff6f6;
-  border:1px solid #ffd4d7;
-  border-left:4px solid var(--red);
-  border-radius:12px;
-  padding:12px 13px;
-  font-size:13px;
-  line-height:1.5;
-  margin-bottom:18px;
-}
-.tip strong{color:var(--black)}
-.section{
-  display:flex;align-items:center;gap:10px;
-  font-size:12px;font-weight:900;letter-spacing:.08em;
-  color:var(--black);text-transform:uppercase;margin:22px 0 9px
-}
-.section:after{content:"";height:1px;background:var(--line);flex:1}
-.product{
-  background:var(--white);
-  border:1px solid var(--line);
-  border-radius:14px;
-  padding:12px;
-  margin-bottom:10px;
-  transition:border-color .15s,box-shadow .15s
-}
-.product:focus-within{border-color:#c9cbd0;box-shadow:0 0 0 3px rgba(227,6,19,.06)}
-.top{display:flex;justify-content:space-between;gap:14px;align-items:flex-start;margin-bottom:8px}
-.name{font-weight:800;font-size:15px;color:var(--black)}
-.pack{font-size:12px;color:var(--muted);text-align:right;line-height:1.35;max-width:52%}
-.inputrow{display:flex;align-items:center;gap:8px}
-input{
-  width:100%;
-  min-width:0;
-  font-size:18px;
-  font-weight:650;
-  padding:12px 13px;
-  border:1px solid #cfd1d5;
-  border-radius:10px;
-  background:#fff;
-  color:var(--black);
-  outline:none;
-  -webkit-appearance:none;
-  appearance:none;
-}
-input:focus{border-color:var(--red);box-shadow:0 0 0 3px rgba(227,6,19,.10)}
-.unit{font-size:14px;color:var(--muted);min-width:28px}
-.sum{font-size:12px;color:var(--muted);min-height:16px;margin-top:6px}
-.sum strong{color:var(--black)}
-.warn{color:#9a3b00}
-#calc{
-  width:100%;
-  border:0;
-  border-radius:12px;
-  background:var(--red);
-  color:#fff;
-  padding:16px 14px;
-  font-size:17px;
-  font-weight:900;
-  letter-spacing:.02em;
-  cursor:pointer;
-  box-shadow:0 4px 0 var(--red-dark);
-  margin-top:12px;
-}
+html{scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(circle at top left,rgba(227,6,19,.07),transparent 28%),linear-gradient(180deg,#f2f2f3 0,#ececee 100%);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}
+button,input{font:inherit}
+.shell{max-width:1180px;margin:0 auto;padding:22px 14px 42px}
+.app{background:#fff;border:1px solid #dedfe2;border-radius:24px;box-shadow:0 18px 46px rgba(0,0,0,.08);overflow:hidden}
+.header{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:18px;padding:20px 22px;background:#fff;border-bottom:1px solid var(--line);position:relative}
+.header:after{content:"";position:absolute;left:0;right:0;bottom:0;height:4px;background:linear-gradient(90deg,var(--red),#ff4b57 58%,var(--red))}
+.logo{width:190px;max-height:64px;object-fit:contain;object-position:left center;display:block}
+.title-wrap h1{margin:0;color:var(--black);font-size:24px;letter-spacing:-.025em;line-height:1.1}
+.title-wrap p{margin:5px 0 0;color:var(--muted);font-size:13px}
+.badge{padding:8px 11px;border-radius:999px;background:#fff3f4;color:var(--red);border:1px solid #ffd0d4;font-size:11px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
+.main{display:grid;grid-template-columns:minmax(0,1fr) 330px;gap:18px;padding:20px}
+.tip{background:#fff8f8;border:1px solid #ffd5d8;border-left:4px solid var(--red);border-radius:14px;padding:12px 14px;font-size:13px;line-height:1.5;margin-bottom:18px}
+.section-title{display:flex;align-items:center;gap:10px;margin:18px 0 10px;color:var(--black);font-size:12px;font-weight:900;letter-spacing:.08em;text-transform:uppercase}
+.section-title:after{content:"";height:1px;background:var(--line);flex:1}
+.products-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.product{border:1px solid var(--line);border-radius:15px;background:#fff;padding:12px;transition:.15s ease}
+.product:hover{border-color:#d1d3d7;box-shadow:0 7px 20px rgba(0,0,0,.04)}
+.product:focus-within{border-color:#f3a2a8;box-shadow:0 0 0 3px rgba(227,6,19,.07)}
+.product-head{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:9px}
+.product-name{font-size:14px;font-weight:850;color:var(--black);line-height:1.25}
+.product-tag{flex:none;font-size:10px;font-weight:800;color:#70747b;background:#f4f4f5;border:1px solid #e5e5e7;padding:4px 6px;border-radius:999px;line-height:1}
+.pack{margin-top:4px;font-size:11px;color:var(--muted);line-height:1.35}
+.input-row{display:flex;align-items:center;gap:8px}
+input{width:100%;min-width:0;padding:11px 12px;border:1px solid #cfd1d5;border-radius:10px;background:#fff;color:var(--black);font-size:17px;font-weight:750;outline:none}
+input:focus{border-color:var(--red);box-shadow:0 0 0 3px rgba(227,6,19,.09)}
+.unit{font-size:12px;font-weight:700;color:#8a8d92}
+.live{min-height:17px;margin-top:6px;color:var(--muted);font-size:11px}
+.live strong{color:var(--black)}
+.warn{color:#a34100}
+.side-card{border:1px solid var(--line);border-radius:17px;background:#fff;overflow:hidden;margin-bottom:12px}
+.side-title{padding:12px 14px;background:#fafafa;border-bottom:1px solid var(--line);font-size:12px;font-weight:900;letter-spacing:.05em;text-transform:uppercase;color:#5d6168}
+.result-card{background:var(--black);color:#fff;border-radius:18px;padding:20px 18px 18px;text-align:left;position:relative;overflow:hidden;margin-bottom:12px}
+.result-card:before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--red)}
+.kicker{color:#b7babf;font-size:11px;font-weight:850;letter-spacing:.08em;text-transform:uppercase}
+.pallet-number{margin-top:5px;font-size:58px;line-height:1;font-weight:950;letter-spacing:-.05em}
+.pallet-label{margin-top:5px;color:#e3e4e6;font-size:14px;font-weight:750}
+.meta{margin-top:11px;color:#aeb1b6;font-size:11px;line-height:1.45}
+#calc{width:100%;border:0;border-radius:13px;padding:15px 14px;background:var(--red);color:#fff;font-size:16px;font-weight:950;letter-spacing:.02em;cursor:pointer;box-shadow:0 4px 0 var(--red-dark)}
 #calc:active{transform:translateY(2px);box-shadow:0 2px 0 var(--red-dark)}
-.result{
-  margin-top:20px;
-  background:var(--black);
-  color:#fff;
-  border-radius:16px;
-  padding:20px 16px;
-  text-align:center;
-  position:relative;
-  overflow:hidden;
-}
-.result:before{
-  content:"";
-  position:absolute;
-  left:0;top:0;bottom:0;
-  width:6px;background:var(--red)
-}
-.result strong{display:block;font-size:27px;line-height:1.2;letter-spacing:-.02em}
-.meta{font-size:12px;color:#c5c7ca;margin-top:6px}
-.details{
-  margin-top:16px;
-  border:1px solid var(--line);
-  border-radius:14px;
-  overflow:hidden;
-  background:#fff;
-}
-.details-title{
-  padding:12px 14px;
-  background:var(--soft);
-  border-bottom:1px solid var(--line);
-  font-size:14px;
-  font-weight:850;
-  color:var(--black)
-}
-#details{padding:7px 14px 11px}
-.drow{padding:9px 0;border-bottom:1px dashed #e2e3e5;font-size:14px;line-height:1.4}
+#details{padding:7px 14px 12px;max-height:350px;overflow:auto}
+.drow{padding:9px 0;border-bottom:1px dashed #e1e2e4;font-size:12px;line-height:1.45}
 .drow:last-child{border-bottom:0}
-.clear-zone{
-  display:flex;
-  justify-content:flex-end;
-  margin-top:22px;
-  padding-top:14px;
-  border-top:1px solid #efeff1;
-}
-#clear{
-  width:auto;
-  padding:8px 10px;
-  border:1px solid #d7d8db;
-  border-radius:9px;
-  background:#f5f5f6;
-  color:#777b82;
-  font-size:12px;
-  font-weight:650;
-  cursor:pointer
-}
-#clear:hover{background:#ededee;color:#4f5257}
-.note{
-  margin-top:14px;
-  color:#80838a;
-  font-size:11px;
-  line-height:1.55;
-}
-.footer-mark{
-  margin-top:24px;
-  color:#a4a6aa;
-  font-size:10px;
-  text-align:center;
-  letter-spacing:.06em;
-  text-transform:uppercase
-}
-@media(max-width:560px){
-  .wrap{padding:8px 8px 24px}
-  .app{border-radius:14px}
-  .header{padding:17px 14px 14px}
-  .content{padding:13px}
-  .logo{width:min(300px,88%);margin-bottom:13px}
-  .headline-row{display:block}
-  h1{font-size:22px}
-  .version{margin-top:5px}
-  .top{align-items:flex-start}
-  .name{font-size:15px}
-  .pack{max-width:48%;font-size:11px}
-  input{font-size:17px}
-  .result strong{font-size:23px}
-}
+.clear-wrap{display:flex;justify-content:flex-end;margin-top:12px}
+#clear{border:1px solid #d6d7da;background:#f4f4f5;color:#777b81;border-radius:9px;padding:7px 9px;font-size:11px;font-weight:700;cursor:pointer}
+.note{padding:12px 14px;color:#81848a;font-size:10px;line-height:1.5}
+.mobile-action{display:none}
+.footer{text-align:center;padding:0 20px 18px;color:#a2a5aa;font-size:10px;letter-spacing:.06em;text-transform:uppercase}
+@media(max-width:900px){.main{grid-template-columns:1fr}.side{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:start}.result-card{margin:0}}
+@media(max-width:680px){body{padding-bottom:82px}.shell{padding:8px 8px 24px}.app{border-radius:15px}.header{grid-template-columns:1fr auto;gap:10px;padding:14px 13px 13px}.logo{grid-column:1/-1;width:min(240px,72%);max-height:54px;margin-bottom:4px}.title-wrap h1{font-size:20px}.title-wrap p{font-size:12px}.badge{font-size:9px;padding:6px 8px}.main{padding:13px}.products-grid{grid-template-columns:1fr}.side{display:block}.result-card{margin-bottom:12px}#calc{display:none}.mobile-action{display:block;position:fixed;z-index:20;left:10px;right:10px;bottom:calc(10px + env(safe-area-inset-bottom));max-width:660px;margin:auto}#mobileCalc{width:100%;border:0;border-radius:14px;padding:16px 14px;background:var(--red);color:#fff;font-size:17px;font-weight:950;box-shadow:0 7px 24px rgba(227,6,19,.30)}.pallet-number{font-size:52px}}
 </style>
 </head>
 <body>
-<div class="wrap">
-  <div class="app">
-    <div class="header">
-      <img src="logo.png" alt="DZIK" class="logo">
-      <div class="headline-row">
-        <h1>Pallet Calculator</h1>
-        <div class="version">V2 • Warehouse Tool</div>
-      </div>
-      <div class="sub">Szybkie, orientacyjne określenie liczby europalet dla zamówienia.</div>
-    </div>
-
-    <div class="content">
-      <div class="tip">
-        <strong>Możesz dodawać kilka pozycji bez kalkulatora.</strong>
-        Wpisz np. <strong>168+240+96</strong>, a program sam policzy sumę sztuk.
-      </div>
-
-      <div class="section">Napoje i wafle</div>
-      <div id="old"></div>
-
-      <div class="section">Pozostałe produkty</div>
-      <div id="new"></div>
-
-      <button id="calc" type="button">OBLICZ PALETY</button>
-
-      <div class="result">
-        <strong id="result">SZACOWANA LICZBA PALET: —</strong>
-        <div class="meta" id="meta"></div>
-      </div>
-
-      <div class="details">
-        <div class="details-title">Przeliczenie zamówienia</div>
-        <div id="details">Brak danych.</div>
-      </div>
-
-      <div class="clear-zone">
-        <button id="clear" type="button">Wyczyść wszystkie pola</button>
-      </div>
-
-      <div class="note">
-        Model V2: 95% wykorzystania powierzchni warstwy i 160 cm roboczej wysokości towaru.
-        Nowe pudełka są szacowane z wymiarów podstawy europalety 120×80 cm.
-        Wynik jest orientacyjny i służy do szybkiego określenia liczby shipping labels.
-      </div>
-
-      <div class="footer-mark">DZIK • Pallet Calculator</div>
-    </div>
-  </div>
+<div class="shell"><div class="app">
+<header class="header">
+<img src="logo.png" alt="DZIK" class="logo">
+<div class="title-wrap"><h1>Pallet Calculator</h1><p>Szacowanie liczby europalet dla zamówień magazynowych.</p></div>
+<div class="badge">Warehouse Tool • V3</div>
+</header>
+<main class="main">
+<section class="left">
+<div class="tip"><strong>Dodawaj wiele pozycji od razu:</strong> wpisz np. <strong>168+240+96</strong>. Kalkulator sam policzy sumę i przeliczy ją na opakowania.</div>
+<div class="section-title">Napoje i wafle</div><div class="products-grid" id="old"></div>
+<div class="section-title">Pozostałe produkty</div><div class="products-grid" id="new"></div>
+</section>
+<aside class="side">
+<div>
+<div class="result-card" id="resultCard"><div class="kicker">Szacowana liczba</div><div class="pallet-number" id="palletNumber">—</div><div class="pallet-label">PALET</div><div class="meta" id="meta">Wpisz ilości produktów i kliknij „Oblicz palety”.</div></div>
+<button id="calc" type="button">OBLICZ PALETY</button>
 </div>
+<div class="side-card">
+<div class="side-title">Przeliczenie zamówienia</div>
+<div id="details">Brak danych.</div>
+<div class="clear-wrap"><button id="clear" type="button">Wyczyść wszystkie pola</button></div>
+<div class="note">Model V3: 95% wykorzystania powierzchni warstwy i 160 cm roboczej wysokości towaru. Wynik ma charakter orientacyjny.</div>
+</div>
+</aside>
+</main>
+<div class="footer">DZIK • Pallet Calculator</div>
+</div></div>
+<div class="mobile-action"><button id="mobileCalc" type="button">OBLICZ PALETY</button></div>
 
 <script>
 (function(){
 var P=[
-["old","can500","Puszka 500 ml",24,18,9,"24 szt./zgrz."],
-["old","can330","Puszka 330 ml",24,12,9,"24 szt./zgrz."],
-["old","pet15","PET 1.5 L",6,33,19,"6 szt./zgrz."],
-["old","pet085","PET 0.85 L",6,25,21,"6 szt./zgrz."],
-["old","iso750","Izotonik 750 ml",12,27,17,"12 szt./zgrz."],
-["old","water500","Woda 500 ml",6,16,25,"6 szt./zgrz."],
-["old","wafers","Wafle standard",12,20,8,"12 szt./zgrz."],
-["old","wafersSpecial","Wafle cebulka / Texas BBQ",12,20,8,"12 szt./zgrz."],
-
-["new","creatine","Kreatyna / Cytrulina",21,17.5,3,"21 szt./pud. • 72,5×33 • wys. 17,5 cm"],
-["new","bomba","Bomba",40,24.5,4,"40 szt./pud. • 59×40 • wys. 24,5 cm"],
-["new","sweet","Sosy słodkie",6,18,24,"6 szt./pacz. • 18,5×18 • wys. 18 cm"],
-["new","bars","Batony",24,8,16,"24 szt./pacz. • 28×19 • wys. 8 cm"],
-["new","salty","Sosy słone",12,18,15,"12 szt./pud. • 24×26 • wys. 18 cm"],
-["new","vitamins","Witaminy",180,25.5,4,"180 szt./pud. • 59×39,5 • wys. 25,5 cm"],
-["new","gel","Gel",72,21.5,8,"72 szt./pud. • 37×29,5 • wys. 21,5 cm"]
+["old","can500","Puszka 500 ml",24,18,9,"24 szt./zgrz.","CAN"],
+["old","can330","Puszka 330 ml",24,12,9,"24 szt./zgrz.","CAN"],
+["old","pet15","PET 1.5 L",6,33,19,"6 szt./zgrz.","PET"],
+["old","pet085","PET 0.85 L",6,25,21,"6 szt./zgrz.","PET"],
+["old","iso750","Izotonik 750 ml",12,27,17,"12 szt./zgrz.","PET"],
+["old","water500","Woda 500 ml",6,16,25,"6 szt./zgrz.","PET"],
+["old","wafers","Wafle standard",12,20,8,"12 szt./zgrz.","BOX"],
+["old","wafersSpecial","Wafle cebulka / Texas BBQ",12,20,8,"12 szt./zgrz.","BOX"],
+["new","creatine","Kreatyna / Cytrulina",21,17.5,3,"21 szt./pud. • 72,5×33 • wys. 17,5 cm","BOX"],
+["new","bomba","Bomba",40,24.5,4,"40 szt./pud. • 59×40 • wys. 24,5 cm","BOX"],
+["new","sweet","Sosy słodkie",6,18,24,"6 szt./pacz. • 18,5×18 • wys. 18 cm","BOX"],
+["new","bars","Batony",24,8,16,"24 szt./pacz. • 28×19 • wys. 8 cm","BOX"],
+["new","salty","Sosy słone",12,18,15,"12 szt./pud. • 24×26 • wys. 18 cm","BOX"],
+["new","vitamins","Witaminy",180,25.5,4,"180 szt./pud. • 59×39,5 • wys. 25,5 cm","BOX"],
+["new","gel","Gel",72,21.5,8,"72 szt./pud. • 37×29,5 • wys. 21,5 cm","BOX"]
 ];
-
-function render(){
-  var a="",b="";
-  P.forEach(function(p){
-    var x=
-      '<div class="product">'+
-        '<div class="top">'+
-          '<div class="name">'+p[2]+'</div>'+
-          '<div class="pack">'+p[6]+'</div>'+
-        '</div>'+
-        '<div class="inputrow">'+
-          '<input id="'+p[1]+'" type="text" inputmode="text" placeholder="'+(p[1]=="can500"?"np. 168+240+96":"0")+'">'+
-          '<span class="unit">szt.</span>'+
-        '</div>'+
-        '<div class="sum" id="s_'+p[1]+'"></div>'+
-      '</div>';
-    if(p[0]=="old") a+=x; else b+=x;
-  });
-  document.getElementById("old").innerHTML=a;
-  document.getElementById("new").innerHTML=b;
-}
-
-function parse(s){
-  s=String(s).trim();
-  if(!s) return {ok:true,total:0,n:0};
-  if(!/^[0-9+\s]+$/.test(s)) return {ok:false};
-  var q=s.split("+"),t=0;
-  for(var i=0;i<q.length;i++){
-    var z=q[i].trim();
-    if(!z) return {ok:false};
-    t+=parseInt(z,10);
-  }
-  return {ok:true,total:t,n:q.length};
-}
-
-function live(k){
-  var e=document.getElementById(k),o=document.getElementById("s_"+k),r=parse(e.value);
-  if(!r.ok){
-    o.innerHTML='<span class="warn">Użyj liczb i znaku +</span>';
-    e.style.borderColor="#e30613";
-  }else{
-    e.style.borderColor="#cfd1d5";
-    o.innerHTML=r.n>1?'Suma: <strong>'+r.total+' szt.</strong>':"";
-  }
-}
-
-function calc(){
-  var d=0,rows=[],bad=false;
-  P.forEach(function(p){
-    var e=document.getElementById(p[1]),r=parse(e.value);
-    if(!r.ok){
-      bad=true;
-      e.style.borderColor="#e30613";
-      return;
-    }
-    var packs=r.total?Math.ceil(r.total/p[3]):0;
-    d+=packs*(1/p[5])*p[4];
-
-    if(r.total){
-      rows.push(
-        '<div class="drow"><strong>'+p[2]+'</strong><br>'+
-        r.total+' szt. → '+packs+' opak.'+
-        (r.total%p[3]?' <span class="warn">(zaokrąglono w górę)</span>':'')+
-        '</div>'
-      );
-    }
-  });
-
-  if(bad){
-    document.getElementById("result").innerHTML="BŁĄD DANYCH";
-    document.getElementById("meta").innerHTML="Popraw pola zaznaczone na czerwono.";
-    return;
-  }
-
-  var n=d?Math.ceil(d/(.95*160)):0;
-  document.getElementById("result").innerHTML="SZACOWANA LICZBA PALET: "+n;
-  document.getElementById("meta").innerHTML=n?
-    "Model pojemnościowy z marginesem bezpieczeństwa 5%.":
-    "Brak produktów.";
-  document.getElementById("details").innerHTML=rows.length?rows.join(""):"Brak danych.";
-}
-
-function clearAll(){
-  if(!confirm("Na pewno wyczyścić wszystkie wpisane ilości?")) return;
-
-  P.forEach(function(p){
-    document.getElementById(p[1]).value="";
-    document.getElementById("s_"+p[1]).innerHTML="";
-  });
-
-  document.getElementById("result").innerHTML="SZACOWANA LICZBA PALET: —";
-  document.getElementById("meta").innerHTML="";
-  document.getElementById("details").innerHTML="Brak danych.";
-}
-
-render();
-
-P.forEach(function(p){
-  document.getElementById(p[1]).addEventListener("input",function(){live(p[1]);});
-});
-
-document.getElementById("calc").addEventListener("click",calc);
-document.getElementById("clear").addEventListener("click",clearAll);
+function render(){var a="",b="";P.forEach(function(p){var x='<div class="product"><div class="product-head"><div><div class="product-name">'+p[2]+'</div><div class="pack">'+p[6]+'</div></div><span class="product-tag">'+p[7]+'</span></div><div class="input-row"><input id="'+p[1]+'" type="text" inputmode="text" placeholder="'+(p[1]=="can500"?"np. 168+240+96":"0")+'"><span class="unit">szt.</span></div><div class="live" id="s_'+p[1]+'"></div></div>';if(p[0]=="old")a+=x;else b+=x});document.getElementById("old").innerHTML=a;document.getElementById("new").innerHTML=b}
+function parse(s){s=String(s).trim();if(!s)return{ok:true,total:0,n:0};if(!/^[0-9+\s]+$/.test(s))return{ok:false};var q=s.split("+"),t=0;for(var i=0;i<q.length;i++){var z=q[i].trim();if(!z)return{ok:false};t+=parseInt(z,10)}return{ok:true,total:t,n:q.length}}
+function live(k){var e=document.getElementById(k),o=document.getElementById("s_"+k),p=null;for(var i=0;i<P.length;i++){if(P[i][1]===k){p=P[i];break}}var r=parse(e.value);if(!r.ok){o.innerHTML='<span class="warn">Użyj liczb i znaku +</span>';e.style.borderColor="#e30613";return}e.style.borderColor="#cfd1d5";if(!r.total){o.innerHTML="";return}var packs=Math.ceil(r.total/p[3]);o.innerHTML='<strong>'+r.total+' szt.</strong> → '+packs+' opak.'}
+function calc(){var d=0,rows=[],bad=false;P.forEach(function(p){var e=document.getElementById(p[1]),r=parse(e.value);if(!r.ok){bad=true;e.style.borderColor="#e30613";return}var packs=r.total?Math.ceil(r.total/p[3]):0;d+=packs*(1/p[5])*p[4];if(r.total){rows.push('<div class="drow"><strong>'+p[2]+'</strong><br>'+r.total+' szt. → '+packs+' opak.'+(r.total%p[3]?' <span class="warn">(zaokrąglono w górę)</span>':'')+'</div>')}});if(bad){document.getElementById("palletNumber").innerHTML="!";document.getElementById("meta").innerHTML="Popraw pola zaznaczone na czerwono.";return}var n=d?Math.ceil(d/(.95*160)):0;document.getElementById("palletNumber").innerHTML=String(n);document.getElementById("meta").innerHTML=n?"Model pojemnościowy z marginesem bezpieczeństwa 5%.":"Brak produktów w zamówieniu.";document.getElementById("details").innerHTML=rows.length?rows.join(""):"Brak danych.";if(window.innerWidth<=680){document.getElementById("resultCard").scrollIntoView({behavior:"smooth",block:"center"})}}
+function clearAll(){if(!confirm("Na pewno wyczyścić wszystkie wpisane ilości?"))return;P.forEach(function(p){document.getElementById(p[1]).value="";document.getElementById("s_"+p[1]).innerHTML="";document.getElementById(p[1]).style.borderColor="#cfd1d5"});document.getElementById("palletNumber").innerHTML="—";document.getElementById("meta").innerHTML='Wpisz ilości produktów i kliknij „Oblicz palety”.';document.getElementById("details").innerHTML="Brak danych."}
+render();P.forEach(function(p){document.getElementById(p[1]).addEventListener("input",function(){live(p[1])})});document.getElementById("calc").addEventListener("click",calc);document.getElementById("mobileCalc").addEventListener("click",calc);document.getElementById("clear").addEventListener("click",clearAll);
 })();
 </script>
 </body>
