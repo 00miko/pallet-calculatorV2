@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#0b0d0f">
+<title>DZIK Pallet Calculator V5</title>
+<style>
+:root{--red:#e30613;--red2:#b90410;--black:#0b0d0f;--ink:#17191c;--muted:#70747b;--line:#e5e6e8;--soft:#f6f6f7}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(circle at top left,rgba(227,6,19,.07),transparent 28%),linear-gradient(180deg,#f2f2f3,#ececee);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;padding-bottom:20px}
+button,input,select{font:inherit}
+.shell{max-width:1160px;margin:auto;padding:20px 12px}
+.app{background:#fff;border:1px solid #dddfe2;border-radius:22px;overflow:hidden;box-shadow:0 18px 46px rgba(0,0,0,.08)}
+.header{display:grid;grid-template-columns:auto 1fr auto;gap:18px;align-items:center;padding:20px 22px;border-bottom:4px solid var(--red)}
+.logo{width:180px;max-height:60px;object-fit:contain;object-position:left center}
+h1{margin:0;font-size:24px;color:var(--black)}
+.subtitle{margin-top:4px;font-size:13px;color:var(--muted)}
+.badge{background:#fff3f4;border:1px solid #ffd0d4;color:var(--red);padding:7px 10px;border-radius:999px;font-size:10px;font-weight:900;letter-spacing:.08em}
+.main{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:18px;padding:20px}
+.tip{background:#fff8f8;border:1px solid #ffd6d9;border-left:4px solid var(--red);border-radius:12px;padding:11px 13px;font-size:13px;line-height:1.45}
+.section{display:flex;align-items:center;gap:10px;margin:18px 0 9px;font-size:12px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:#222}
+.section:after{content:"";height:1px;background:var(--line);flex:1}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.card{border:1px solid var(--line);border-radius:14px;padding:12px;background:#fff}
+.card-head{display:flex;justify-content:space-between;gap:10px;margin-bottom:8px}
+.name{font-weight:850;font-size:14px;color:var(--black)}
+.meta-small{font-size:11px;color:var(--muted);margin-top:3px;line-height:1.35}
+.tag{font-size:9px;font-weight:850;padding:4px 6px;border-radius:999px;background:#f4f4f5;border:1px solid #e5e5e7;color:#70747b;height:max-content}
+.inputrow{display:grid;grid-template-columns:minmax(0,1fr) 44px auto;gap:7px;align-items:center}
+input,select{width:100%;padding:11px 12px;border:1px solid #cfd1d5;border-radius:10px;background:#fff;color:#111;outline:none}
+input{font-size:17px;font-weight:750}
+input:focus,select:focus{border-color:var(--red);box-shadow:0 0 0 3px rgba(227,6,19,.09)}
+.plus{height:44px;border:1px solid #d7d8db;background:#f6f6f7;border-radius:10px;font-size:21px;font-weight:900;cursor:pointer}
+.unit{font-size:12px;color:#8a8d92;font-weight:700}
+.live{min-height:17px;margin-top:6px;font-size:11px;color:var(--muted)}
+.live strong{color:#111}
+.addbox{border:1px dashed #cdd0d4;border-radius:14px;padding:12px;background:#fafafa}
+.addrow{display:grid;grid-template-columns:minmax(0,1fr) 150px;gap:8px}
+.addbtn{border:0;background:var(--black);color:#fff;border-radius:10px;font-size:13px;font-weight:850;cursor:pointer}
+.dynamic{display:grid;gap:10px;margin-top:10px}
+.remove{border:1px solid #ddd;background:#f6f6f7;color:#777;border-radius:8px;padding:5px 8px;font-size:10px;cursor:pointer}
+.weightbox{margin-top:14px;border:1px solid #dddfe2;border-radius:14px;padding:13px;background:#fff}
+.switchrow{display:flex;align-items:flex-start;gap:10px}
+.switchrow input{width:20px;height:20px;margin:1px 0 0;accent-color:var(--red)}
+.switchtitle{font-size:13px;font-weight:850;color:#111}
+.switchdesc{font-size:11px;color:var(--muted);margin-top:3px;line-height:1.4}
+.result{background:var(--black);color:#fff;border-radius:17px;padding:19px 18px;margin-bottom:12px;border-left:6px solid var(--red)}
+.kicker{font-size:10px;color:#b9bcc0;font-weight:850;letter-spacing:.08em;text-transform:uppercase}
+.number{font-size:58px;line-height:1;font-weight:950;letter-spacing:-.05em;margin-top:4px}
+.word{font-size:15px;font-weight:850;margin-top:4px}
+.reason{font-size:11px;color:#b9bcc0;margin-top:11px;line-height:1.5}
+.calc{width:100%;border:0;background:var(--red);color:#fff;border-radius:12px;padding:15px;font-size:16px;font-weight:950;cursor:pointer;box-shadow:0 4px 0 var(--red2)}
+.sidecard{border:1px solid var(--line);border-radius:15px;overflow:hidden;margin-top:12px}
+.sidetitle{padding:11px 13px;background:#fafafa;border-bottom:1px solid var(--line);font-size:11px;font-weight:900;letter-spacing:.06em;text-transform:uppercase}
+#details{padding:7px 13px 11px;max-height:390px;overflow:auto;font-size:12px}
+.drow{padding:8px 0;border-bottom:1px dashed #e1e2e4;line-height:1.45}
+.drow:last-child{border:0}
+.warn{color:#a34100}
+.error{color:#ba0010}
+.clearwrap{display:flex;justify-content:flex-end;padding:0 12px 12px}
+.clear{border:1px solid #d7d8da;background:#f5f5f6;color:#777;border-radius:8px;padding:6px 8px;font-size:10px;cursor:pointer}
+.note{padding:10px 13px;color:#85888d;font-size:10px;line-height:1.45;border-top:1px solid #eee}
+.mobilecalc{display:none}
+@media(max-width:900px){.main{grid-template-columns:1fr}.side{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:start}.sidecard{margin:0}}
+@media(max-width:680px){
+body{padding-bottom:80px}.shell{padding:7px}.app{border-radius:14px}.header{grid-template-columns:1fr auto;gap:9px;padding:13px}.logo{grid-column:1/-1;width:min(230px,72%);max-height:52px}.badge{font-size:9px}h1{font-size:20px}.main{padding:12px}.grid{grid-template-columns:1fr}.addrow{grid-template-columns:1fr}.addbtn{padding:12px}.side{display:block}.calc{display:none}.mobilecalc{display:block;position:fixed;z-index:20;left:9px;right:9px;bottom:calc(9px + env(safe-area-inset-bottom));max-width:660px;margin:auto}.mobilecalc button{width:100%;border:0;background:var(--red);color:#fff;border-radius:13px;padding:16px;font-size:17px;font-weight:950;box-shadow:0 7px 24px rgba(227,6,19,.3)}
+}
+</style>
+</head>
+<body>
+<div class="shell"><div class="app">
+<header class="header">
+<img src="logo.png" class="logo" alt="DZIK">
+<div><h1>Pallet Calculator</h1><div class="subtitle">Szacowanie liczby europalet dla zamówień magazynowych.</div></div>
+<div class="badge">WAREHOUSE TOOL • V5</div>
+</header>
+
+<main class="main">
+<section>
+<div class="tip"><strong>Wiele pozycji tego samego produktu?</strong> Wpisz ilości rozdzielając je znakiem <strong>+</strong>, np. <strong>168 + 240 + 96</strong>.</div>
+
+<div class="section">Najczęstsze produkty</div>
+<div class="grid" id="fixed"></div>
+
+<div class="section">Pozostałe produkty</div>
+<div class="addbox"><div class="addrow">
+<select id="selector"><option value="">Ładowanie bazy produktów…</option></select>
+<button id="add" class="addbtn" type="button">+ DODAJ PRODUKT</button>
+</div></div>
+<div class="dynamic" id="dynamic"></div>
+
+<div class="weightbox">
+<div class="switchrow">
+<input id="weightLimit" type="checkbox">
+<div>
+<div class="switchtitle">Zamówienie kluczowego klienta — limit 800 kg / paleta</div>
+<div class="switchdesc">Po zaznaczeniu kalkulator uwzględnia wagę brutto kartonów z MASTERDATA. Jeśli dla któregoś produktu nie mamy jeszcze oficjalnej wagi, pojawi się ostrzeżenie.</div>
+</div>
+</div>
+</div>
+</section>
+
+<aside class="side">
+<div>
+<div class="result" id="resultCard">
+<div class="kicker">Szacowana liczba</div>
+<div class="number" id="number">—</div>
+<div class="word" id="word">PALET</div>
+<div class="reason" id="reason">Wpisz produkty i kliknij „Oblicz palety”.</div>
+</div>
+<button class="calc" id="calc" type="button">OBLICZ PALETY</button>
+</div>
+
+<div class="sidecard">
+<div class="sidetitle">Przeliczenie zamówienia</div>
+<div id="details">Brak danych.</div>
+<div class="clearwrap"><button class="clear" id="clear" type="button">Wyczyść wszystkie pola</button></div>
+<div class="note">V5 korzysta z oficjalnego MASTERDATA tam, gdzie dane są dostępne. Napoje i wafle pozostają tymczasowo na danych V4.</div>
+</div>
+</aside>
+</main>
+</div></div>
+
+<div class="mobilecalc"><button id="mobileCalc" type="button">OBLICZ PALETY</button></div>
+
+<script>
+(function(){
+var DB=null;
+var BY_ID={};
+var FIXED=["LEGACY_CAN500","LEGACY_CAN330","LEGACY_PET15","LEGACY_PET085"];
+var dynamicRows=[];
+var counter=0;
+
+function parseExpr(s){
+ s=String(s||"").trim();
+ if(!s)return{ok:true,total:0};
+ if(!/^[0-9+\s]+$/.test(s))return{ok:false,total:0};
+ var parts=s.split("+"),total=0;
+ for(var i=0;i<parts.length;i++){
+   var z=parts[i].trim();
+   if(!z)return{ok:false,total:0};
+   total+=parseInt(z,10);
+ }
+ return{ok:true,total:total};
+}
+function palletWord(n){
+ if(n===1)return"PALETA";
+ var l=n%10,t=n%100;
+ if(l>=2&&l<=4&&!(t>=12&&t<=14))return"PALETY";
+ return"PALET";
+}
+function rowHtml(prod,id,removable){
+ var source=prod.source==="MASTERDATA"?"MASTERDATA":"V4";
+ return '<div class="card" id="wrap_'+id+'">'+
+ '<div class="card-head"><div><div class="name">'+prod.name+'</div><div class="meta-small">'+prod.unitsPerCarton+' szt./opak. • '+prod.cartonsPerLayer+' opak./warstwę'+(prod.weightKnown?' • '+prod.cartonGrossWeightKg.toFixed(2)+' kg/opak.':'')+'</div></div>'+
+ '<div>'+(removable?'<button class="remove" data-remove="'+id+'">Usuń</button>':'<span class="tag">'+source+'</span>')+'</div></div>'+
+ '<div class="inputrow"><input id="'+id+'" inputmode="numeric" pattern="[0-9+]*" autocomplete="off" placeholder="0">'+
+ '<button class="plus" data-plus="'+id+'" type="button">+</button><span class="unit">szt.</span></div>'+
+ '<div class="live" id="live_'+id+'"></div></div>';
+}
+function bindRow(id,prod){
+ var input=document.getElementById(id);
+ input.addEventListener("input",function(){live(id,prod);});
+ var plus=document.querySelector('[data-plus="'+id+'"]');
+ plus.addEventListener("click",function(){
+   var v=input.value.trim();
+   if(v&&v.slice(-1)!="+")input.value=v+"+";
+   input.focus();
+   live(id,prod);
+ });
+}
+function live(id,p){
+ var e=document.getElementById(id),o=document.getElementById("live_"+id),r=parseExpr(e.value);
+ if(!r.ok){e.style.borderColor="#e30613";o.innerHTML='<span class="error">Nieprawidłowy zapis</span>';return;}
+ e.style.borderColor="#cfd1d5";
+ if(!r.total){o.innerHTML="";return;}
+ var cartons=Math.ceil(r.total/p.unitsPerCarton);
+ o.innerHTML='<strong>'+r.total+' szt.</strong> → '+cartons+' opak.';
+}
+function renderFixed(){
+ var box=document.getElementById("fixed"),h="";
+ FIXED.forEach(function(k){if(BY_ID[k])h+=rowHtml(BY_ID[k],"f_"+k,false);});
+ box.innerHTML=h;
+ FIXED.forEach(function(k){if(BY_ID[k])bindRow("f_"+k,BY_ID[k]);});
+}
+function fillSelector(){
+ var s=document.getElementById("selector");
+ s.innerHTML='<option value="">Wybierz produkt…</option>';
+ DB.products.filter(function(p){return FIXED.indexOf(p.id)<0;})
+ .sort(function(a,b){return a.name.localeCompare(b.name,"pl");})
+ .forEach(function(p){
+   var o=document.createElement("option");
+   o.value=p.id;
+   o.textContent=p.name+(p.code?" ["+p.code+"]":"");
+   s.appendChild(o);
+ });
+}
+function addProduct(){
+ var s=document.getElementById("selector"),key=s.value;
+ if(!key||!BY_ID[key])return;
+ counter++;
+ var id="d_"+counter,p=BY_ID[key];
+ dynamicRows.push({id:id,key:key});
+ var holder=document.createElement("div");
+ holder.innerHTML=rowHtml(p,id,true);
+ var el=holder.firstChild;
+ document.getElementById("dynamic").appendChild(el);
+ bindRow(id,p);
+ el.querySelector("[data-remove]").addEventListener("click",function(){
+   dynamicRows=dynamicRows.filter(function(x){return x.id!==id;});
+   el.remove();
+ });
+ s.value="";
+ document.getElementById(id).focus();
+}
+function entries(){
+ var arr=[];
+ FIXED.forEach(function(k){if(BY_ID[k])arr.push({id:"f_"+k,p:BY_ID[k]});});
+ dynamicRows.forEach(function(x){arr.push({id:x.id,p:BY_ID[x.key]});});
+ return arr;
+}
+function calc(){
+ var list=entries(),spaceDemand=0,totalWeight=0,unknownWeight=[],rows=[],bad=false;
+ list.forEach(function(x){
+   var e=document.getElementById(x.id),r=parseExpr(e.value),p=x.p;
+   if(!r.ok){bad=true;e.style.borderColor="#e30613";return;}
+   if(!r.total)return;
+   var cartons=Math.ceil(r.total/p.unitsPerCarton);
+
+   // Space proxy: fraction of a full layer * carton height.
+   // This keeps compatibility with the V4 mixed-layer approximation while using official cartons/layer.
+   spaceDemand += cartons*(1/p.cartonsPerLayer)*p.cartonHeightCm;
+
+   if(p.weightKnown && p.cartonGrossWeightKg!=null){
+     totalWeight += cartons*p.cartonGrossWeightKg;
+   }else{
+     unknownWeight.push(p.name);
+   }
+
+   rows.push('<div class="drow"><strong>'+p.name+'</strong><br>'+r.total+' szt. → '+cartons+' opak.'+
+     (p.weightKnown?' • '+(cartons*p.cartonGrossWeightKg).toFixed(1)+' kg':' • <span class="warn">brak danych wagowych</span>')+
+     '</div>');
+ });
+
+ if(bad){
+   document.getElementById("number").textContent="!";
+   document.getElementById("word").textContent="BŁĄD";
+   document.getElementById("reason").textContent="Popraw pola zaznaczone na czerwono.";
+   return;
+ }
+
+ var surface=DB.settings.surfaceSafetyFactor||.95;
+ var height=DB.settings.usableGoodsHeightCm||160;
+ var spacePallets=spaceDemand?Math.ceil(spaceDemand/(surface*height)):0;
+
+ var useWeight=document.getElementById("weightLimit").checked;
+ var weightPallets=0;
+ if(useWeight && totalWeight>0){
+   weightPallets=Math.ceil(totalWeight/(DB.settings.keyCustomerWeightLimitKg||800));
+ }
+
+ var result=Math.max(spacePallets,weightPallets);
+ document.getElementById("number").textContent=String(result);
+ document.getElementById("word").textContent=palletWord(result);
+
+ var reason=[];
+ reason.push("Przestrzeń: min. "+spacePallets+" "+palletWord(spacePallets).toLowerCase());
+ if(useWeight){
+   reason.push("znana waga: "+totalWeight.toFixed(1)+" kg → min. "+weightPallets+" "+palletWord(weightPallets).toLowerCase());
+   if(unknownWeight.length){
+     reason.push("UWAGA: brak wagi dla "+unknownWeight.length+" typów produktu");
+   }
+ }else{
+   reason.push("limit 800 kg: wyłączony");
+ }
+ document.getElementById("reason").textContent=reason.join(" • ");
+ document.getElementById("details").innerHTML=rows.length?rows.join(""):"Brak danych.";
+
+ if(window.innerWidth<=680)document.getElementById("resultCard").scrollIntoView({behavior:"smooth",block:"center"});
+}
+function clearAll(){
+ if(!confirm("Na pewno wyczyścić wszystkie wpisane ilości?"))return;
+ FIXED.forEach(function(k){var e=document.getElementById("f_"+k);if(e)e.value="";});
+ dynamicRows=[];document.getElementById("dynamic").innerHTML="";
+ document.getElementById("weightLimit").checked=false;
+ document.getElementById("number").textContent="—";
+ document.getElementById("word").textContent="PALET";
+ document.getElementById("reason").textContent='Wpisz produkty i kliknij „Oblicz palety”.';
+ document.getElementById("details").innerHTML="Brak danych.";
+}
+function init(db){
+ DB=db;
+ db.products.forEach(function(p){BY_ID[p.id]=p;});
+ renderFixed();fillSelector();
+ document.getElementById("add").addEventListener("click",addProduct);
+ document.getElementById("calc").addEventListener("click",calc);
+ document.getElementById("mobileCalc").addEventListener("click",calc);
+ document.getElementById("clear").addEventListener("click",clearAll);
+}
+fetch("products.json?v=5")
+ .then(function(r){if(!r.ok)throw new Error("HTTP "+r.status);return r.json();})
+ .then(init)
+ .catch(function(err){
+   document.getElementById("selector").innerHTML='<option>Błąd ładowania products.json</option>';
+   document.getElementById("reason").textContent="Nie udało się wczytać bazy products.json. Sprawdź, czy plik jest obok index.html.";
+ });
+})();
+</script>
+</body>
+</html>

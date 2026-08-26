@@ -1,0 +1,1438 @@
+{
+  "schemaVersion": 1,
+  "source": "MASTERDATA for FM - TEMPLATE (2).xlsx",
+  "settings": {
+    "keyCustomerWeightLimitKg": 800,
+    "weightLimitDefaultEnabled": false
+  },
+  "stats": {
+    "sourceRows": 58,
+    "calculatorProducts": 42,
+    "excludedRows": 16,
+    "uniquePhysicalPalletizationGroups": 10
+  },
+  "products": [
+    {
+      "code": "KREA-COLA",
+      "name": "KREATYNA COLA DZIK",
+      "unit": {
+        "netWeightKg": 0.369,
+        "grossWeightKg": 0.455,
+        "heightCm": 15.5,
+        "widthCm": 9.9,
+        "depthCm": 15.5
+      },
+      "carton": {
+        "units": 21,
+        "grossWeightKg": 10.7,
+        "heightCm": 17,
+        "widthCm": 34,
+        "lengthCm": 74
+      },
+      "palletization": {
+        "unitsPerPallet": 630,
+        "cartonsPerPallet": 30,
+        "layersPerPallet": 10,
+        "cartonsPerLayer": 3,
+        "unitsPerLayer": 66,
+        "heightCm": 180,
+        "widthCm": 80,
+        "lengthCm": 120,
+        "palletType": "Paleta Jednorazowa"
+      }
+    },
+    {
+      "code": "KREA-COLA-LEMO",
+      "name": "KREATYNA COLA-LEMON DZIK",
+      "unit": {
+        "netWeightKg": 0.369,
+        "grossWeightKg": 0.455,
+        "heightCm": 15.5,
+        "widthCm": 9.9,
+        "depthCm": 15.5
+      },
+      "carton": {
+        "units": 21,
+        "grossWeightKg": 10.7,
+        "heightCm": 17,
+        "widthCm": 34,
+        "lengthCm": 74
+      },
+      "palletization": {
+        "unitsPerPallet": 630,
+        "cartonsPerPallet": 30,
+        "layersPerPallet": 10,
+        "cartonsPerLayer": 3,
+        "unitsPerLayer": 66,
+        "heightCm": 180,
+        "widthCm": 80,
+        "lengthCm": 120,
+        "palletType": "Paleta Jednorazowa"
+      }
+    },
+    {
+      "code": "KREA-GRAP",
+      "name": "KREATYNA GRAPE DZIK",
+      "unit": {
+        "netWeightKg": 0.369,
+        "grossWeightKg": 0.455,
+        "heightCm": 15.5,
+        "widthCm": 9.9,
+        "depthCm": 15.5
+      },
+      "carton": {
+        "units": 21,
+        "grossWeightKg": 10.7,
+        "heightCm": 17,
+        "widthCm": 34,
+        "lengthCm": 74
+      },
+      "palletization": {
+        "unitsPerPallet": 630,
+        "cartonsPerPallet": 30,
+        "layersPerPallet": 10,
+        "cartonsPerLayer": 3,
+        "unitsPerLayer": 66,
+        "heightCm": 180,
+        "widthCm": 80,
+        "lengthCm": 120,
+        "palletType": "Paleta Jednorazowa"
+      }
+    },
+    {
+      "code": "KREA-MANG",
+      "name": "KREATYNA MANGO DZIK",
+      "unit": {
+        "netWeightKg": 0.369,
+        "grossWeightKg": 0.455,
+        "heightCm": 15.5,
+        "widthCm": 9.9,
+        "depthCm": 15.5
+      },
+      "carton": {
+        "units": 21,
+        "grossWeightKg": 10.7,
+        "heightCm": 17,
+        "widthCm": 34,
+        "lengthCm": 74
+      },
+      "palletization": {
+        "unitsPerPallet": 630,
+        "cartonsPerPallet": 30,
+        "layersPerPallet": 10,
+        "cartonsPerLayer": 3,
+        "unitsPerLayer": 66,
+        "heightCm": 180,
+        "widthCm": 80,
+        "lengthCm": 120,
+        "palletType": "Paleta Jednorazowa"
+      }
+    },
+    {
+      "code": "KREA-SOUR-APPL",
+      "name": "KREATYNA SOUR APPLE DZIK",
+      "unit": {
+        "netWeightKg": 0.369,
+        "grossWeightKg": 0.455,
+        "heightCm": 15.5,
+        "widthCm": 9.9,
+        "depthCm": 15.5
+      },
+      "carton": {
+        "units": 21,
+        "grossWeightKg": 10.7,
+        "heightCm": 17,
+        "widthCm": 34,
+        "lengthCm": 74
+      },
+      "palletization": {
+        "unitsPerPallet": 630,
+        "cartonsPerPallet": 30,
+        "layersPerPallet": 10,
+        "cartonsPerLayer": 3,
+        "unitsPerLayer": 66,
+        "heightCm": 180,
+        "widthCm": 80,
+        "lengthCm": 120,
+        "palletType": "Paleta Jednorazowa"
+      }
+    },
+    {
+      "code": "KREA-TRUS-KIWI",
+      "name": "KREATYNA TRUSKAWKA-KIWI DZIK",
+      "unit": {
+        "netWeightKg": 0.369,
+        "grossWeightKg": 0.455,
+        "heightCm": 15.5,
+        "widthCm": 9.9,
+        "depthCm": 15.5
+      },
+      "carton": {
+        "units": 21,
+        "grossWeightKg": 10.7,
+        "heightCm": 17,
+        "widthCm": 34,
+        "lengthCm": 74
+      },
+      "palletization": {
+        "unitsPerPallet": 630,
+        "cartonsPerPallet": 30,
+        "layersPerPallet": 10,
+        "cartonsPerLayer": 3,
+        "unitsPerLayer": 66,
+        "heightCm": 180,
+        "widthCm": 80,
+        "lengthCm": 120,
+        "palletType": "Paleta Jednorazowa"
+      }
+    },
+    {
+      "code": "KREA-NATU",
+      "name": "KREATYNA NATURALNA DZIK",
+      "unit": {
+        "netWeightKg": 0.369,
+        "grossWeightKg": 0.455,
+        "heightCm": 15.5,
+        "widthCm": 9.9,
+        "depthCm": 15.5
+      },
+      "carton": {
+        "units": 21,
+        "grossWeightKg": 10.7,
+        "heightCm": 17,
+        "widthCm": 34,
+        "lengthCm": 74
+      },
+      "palletization": {
+        "unitsPerPallet": 630,
+        "cartonsPerPallet": 30,
+        "layersPerPallet": 10,
+        "cartonsPerLayer": 3,
+        "unitsPerLayer": 66,
+        "heightCm": 180,
+        "widthCm": 80,
+        "lengthCm": 120,
+        "palletType": "Paleta Jednorazowa"
+      }
+    },
+    {
+      "code": "CYTR-GRAP",
+      "name": "CYTRULINA GRAPE DZIK ®",
+      "unit": {
+        "netWeightKg": 0.54,
+        "grossWeightKg": 0.625,
+        "heightCm": 15.5,
+        "widthCm": 9.9,
+        "depthCm": 15.5
+      },
+      "carton": {
+        "units": 21,
+        "grossWeightKg": 13.74,
+        "heightCm": 17,
+        "widthCm": 34,
+        "lengthCm": 74
+      },
+      "palletization": {
+        "unitsPerPallet": 630,
+        "cartonsPerPallet": 30,
+        "layersPerPallet": 10,
+        "cartonsPerLayer": 3,
+        "unitsPerLayer": 66,
+        "heightCm": 180,
+        "widthCm": 80,
+        "lengthCm": 120,
+        "palletType": "Paleta Jednorazowa"
+      }
+    },
+    {
+      "code": "CYTR-SOUR-APPL",
+      "name": "CYTRULINA SOUR APPLE DZIK ®",
+      "unit": {
+        "netWeightKg": 0.54,
+        "grossWeightKg": 0.625,
+        "heightCm": 15.5,
+        "widthCm": 9.9,
+        "depthCm": 15.5
+      },
+      "carton": {
+        "units": 21,
+        "grossWeightKg": 13.74,
+        "heightCm": 17,
+        "widthCm": 34,
+        "lengthCm": 74
+      },
+      "palletization": {
+        "unitsPerPallet": 630,
+        "cartonsPerPallet": 30,
+        "layersPerPallet": 10,
+        "cartonsPerLayer": 3,
+        "unitsPerLayer": 66,
+        "heightCm": 180,
+        "widthCm": 80,
+        "lengthCm": 120,
+        "palletType": "Paleta Jednorazowa"
+      }
+    },
+    {
+      "code": "CYTR-CYTR",
+      "name": "CYTRULINA LEMON DZIK ®",
+      "unit": {
+        "netWeightKg": 0.54,
+        "grossWeightKg": 0.625,
+        "heightCm": 15.5,
+        "widthCm": 9.9,
+        "depthCm": 15.5
+      },
+      "carton": {
+        "units": 21,
+        "grossWeightKg": 13.74,
+        "heightCm": 17,
+        "widthCm": 34,
+        "lengthCm": 74
+      },
+      "palletization": {
+        "unitsPerPallet": 630,
+        "cartonsPerPallet": 30,
+        "layersPerPallet": 10,
+        "cartonsPerLayer": 3,
+        "unitsPerLayer": 66,
+        "heightCm": 180,
+        "widthCm": 80,
+        "lengthCm": 120,
+        "palletType": "Paleta Jednorazowa"
+      }
+    },
+    {
+      "code": "CYTR-ARBU",
+      "name": "CYTRULINA WATERMELON DZIK ®",
+      "unit": {
+        "netWeightKg": 0.54,
+        "grossWeightKg": 0.625,
+        "heightCm": 15.5,
+        "widthCm": 9.9,
+        "depthCm": 15.5
+      },
+      "carton": {
+        "units": 21,
+        "grossWeightKg": 13.74,
+        "heightCm": 17,
+        "widthCm": 34,
+        "lengthCm": 74
+      },
+      "palletization": {
+        "unitsPerPallet": 630,
+        "cartonsPerPallet": 30,
+        "layersPerPallet": 10,
+        "cartonsPerLayer": 3,
+        "unitsPerLayer": 66,
+        "heightCm": 180,
+        "widthCm": 80,
+        "lengthCm": 120,
+        "palletType": "Paleta Jednorazowa"
+      }
+    },
+    {
+      "code": "CYTR-COLA-LEMO",
+      "name": "CYTRULINA COLA LEMON DZIK ®",
+      "unit": {
+        "netWeightKg": 0.54,
+        "grossWeightKg": 0.625,
+        "heightCm": 15.5,
+        "widthCm": 9.9,
+        "depthCm": 15.5
+      },
+      "carton": {
+        "units": 21,
+        "grossWeightKg": 13.74,
+        "heightCm": 17,
+        "widthCm": 34,
+        "lengthCm": 74
+      },
+      "palletization": {
+        "unitsPerPallet": 630,
+        "cartonsPerPallet": 30,
+        "layersPerPallet": 10,
+        "cartonsPerLayer": 3,
+        "unitsPerLayer": 66,
+        "heightCm": 180,
+        "widthCm": 80,
+        "lengthCm": 120,
+        "palletType": "Paleta Jednorazowa"
+      }
+    },
+    {
+      "code": "BOMB-GRAP",
+      "name": "PRZEDTRENINGÓWKA BOMBA GRAPE DZIK®",
+      "unit": {
+        "netWeightKg": 0.3,
+        "grossWeightKg": 0.358,
+        "heightCm": 9.8,
+        "widthCm": 9.4,
+        "depthCm": 9.8
+      },
+      "carton": {
+        "units": 44,
+        "grossWeightKg": 15.75,
+        "heightCm": 23,
+        "widthCm": 40,
+        "lengthCm": 60
+      },
+      "palletization": {
+        "unitsPerPallet": 1232,
+        "cartonsPerPallet": 28,
+        "layersPerPallet": 7,
+        "cartonsPerLayer": 4,
+        "unitsPerLayer": 176,
+        "heightCm": 180,
+        "widthCm": 80,
+        "lengthCm": 120,
+        "palletType": "Paleta Jednorazowa"
+      }
+    },
+    {
+      "code": "BOMB-SOUR-APPL",
+      "name": "PRZEDTRENINGÓWKA BOMBA SOUR APPLE DZIK®",
+      "unit": {
+        "netWeightKg": 0.3,
+        "grossWeightKg": 0.358,
+        "heightCm": 9.8,
+        "widthCm": 9.4,
+        "depthCm": 9.8
+      },
+      "carton": {
+        "units": 44,
+        "grossWeightKg": 15.75,
+        "heightCm": 23,
+        "widthCm": 40,
+        "lengthCm": 60
+      },
+      "palletization": {
+        "unitsPerPallet": 1232,
+        "cartonsPerPallet": 28,
+        "layersPerPallet": 7,
+        "cartonsPerLayer": 4,
+        "unitsPerLayer": 176,
+        "heightCm": 180,
+        "widthCm": 80,
+        "lengthCm": 120,
+        "palletType": "Paleta Jednorazowa"
+      }
+    },
+    {
+      "code": "BOMB-MANG",
+      "name": "PRZEDTRENINGÓWKA BOMBA MANGO DZIK®",
+      "unit": {
+        "netWeightKg": 0.3,
+        "grossWeightKg": 0.358,
+        "heightCm": 9.8,
+        "widthCm": 9.4,
+        "depthCm": 9.8
+      },
+      "carton": {
+        "units": 44,
+        "grossWeightKg": 15.75,
+        "heightCm": 23,
+        "widthCm": 40,
+        "lengthCm": 60
+      },
+      "palletization": {
+        "unitsPerPallet": 1232,
+        "cartonsPerPallet": 28,
+        "layersPerPallet": 7,
+        "cartonsPerLayer": 4,
+        "unitsPerLayer": 176,
+        "heightCm": 180,
+        "widthCm": 80,
+        "lengthCm": 120,
+        "palletType": "Paleta Jednorazowa"
+      }
+    },
+    {
+      "code": "BOMB-ARBU",
+      "name": "PRZEDTRENINGÓWKA BOMBA WATERMELON DZIK®",
+      "unit": {
+        "netWeightKg": 0.3,
+        "grossWeightKg": 0.358,
+        "heightCm": 9.8,
+        "widthCm": 9.4,
+        "depthCm": 9.8
+      },
+      "carton": {
+        "units": 44,
+        "grossWeightKg": 15.75,
+        "heightCm": 23,
+        "widthCm": 40,
+        "lengthCm": 60
+      },
+      "palletization": {
+        "unitsPerPallet": 1232,
+        "cartonsPerPallet": 28,
+        "layersPerPallet": 7,
+        "cartonsPerLayer": 4,
+        "unitsPerLayer": 176,
+        "heightCm": 180,
+        "widthCm": 80,
+        "lengthCm": 120,
+        "palletType": "Paleta Jednorazowa"
+      }
+    },
+    {
+      "code": "BOMB-COLA",
+      "name": "PRZEDTRENINGÓWKA BOMBA COLA LEMON DZIK®",
+      "unit": {
+        "netWeightKg": 0.3,
+        "grossWeightKg": 0.358,
+        "heightCm": 9.8,
+        "widthCm": 9.4,
+        "depthCm": 9.8
+      },
+      "carton": {
+        "units": 44,
+        "grossWeightKg": 15.75,
+        "heightCm": 23,
+        "widthCm": 40,
+        "lengthCm": 60
+      },
+      "palletization": {
+        "unitsPerPallet": 1232,
+        "cartonsPerPallet": 28,
+        "layersPerPallet": 7,
+        "cartonsPerLayer": 4,
+        "unitsPerLayer": 176,
+        "heightCm": 180,
+        "widthCm": 80,
+        "lengthCm": 120,
+        "palletType": "Paleta Jednorazowa"
+      }
+    },
+    {
+      "code": "WIT-MULT",
+      "name": "MULTIWITAMINA",
+      "unit": {
+        "netWeightKg": 0.081,
+        "grossWeightKg": 0.108,
+        "heightCm": 11.4,
+        "widthCm": 5.8,
+        "depthCm": 11.4
+      },
+      "carton": {
+        "units": 120,
+        "grossWeightKg": 13.72,
+        "heightCm": 23,
+        "widthCm": 40,
+        "lengthCm": 60
+      },
+      "palletization": {
+        "unitsPerPallet": 3360,
+        "cartonsPerPallet": 28,
+        "layersPerPallet": 7,
+        "cartonsPerLayer": 4,
+        "unitsPerLayer": 480,
+        "heightCm": 180,
+        "widthCm": 80,
+        "lengthCm": 120,
+        "palletType": "Paleta Jednorazowa"
+      }
+    },
+    {
+      "code": "WIT-DOBR-SEN",
+      "name": "DOBRY SEN",
+      "unit": {
+        "netWeightKg": 0.088,
+        "grossWeightKg": 0.115,
+        "heightCm": 11.4,
+        "widthCm": 5.8,
+        "depthCm": 11.4
+      },
+      "carton": {
+        "units": 120,
+        "grossWeightKg": 14.56,
+        "heightCm": 23,
+        "widthCm": 40,
+        "lengthCm": 60
+      },
+      "palletization": {
+        "unitsPerPallet": 3360,
+        "cartonsPerPallet": 28,
+        "layersPerPallet": 7,
+        "cartonsPerLayer": 4,
+        "unitsPerLayer": 480,
+        "heightCm": 180,
+        "widthCm": 80,
+        "lengthCm": 120,
+        "palletType": "Paleta Jednorazowa"
+      }
+    },
+    {
+      "code": "WIT-CYNK",
+      "name": "CYNK",
+      "unit": {
+        "netWeightKg": 0.0162,
+        "grossWeightKg": 0.0462,
+        "heightCm": 11.4,
+        "widthCm": 5.8,
+        "depthCm": 11.4
+      },
+      "carton": {
+        "units": 120,
+        "grossWeightKg": 5.544,
+        "heightCm": 23,
+        "widthCm": 40,
+        "lengthCm": 60
+      },
+      "palletization": {
+        "unitsPerPallet": 3360,
+        "cartonsPerPallet": 28,
+        "layersPerPallet": 7,
+        "cartonsPerLayer": 4,
+        "unitsPerLayer": 480,
+        "heightCm": 180,
+        "widthCm": 80,
+        "lengthCm": 120,
+        "palletType": "Paleta Jednorazowa"
+      }
+    },
+    {
+      "code": "WIT-D3K2",
+      "name": "D3-K2",
+      "unit": {
+        "netWeightKg": 0.0243,
+        "grossWeightKg": 0.051,
+        "heightCm": 11.4,
+        "widthCm": 5.8,
+        "depthCm": 11.4
+      },
+      "carton": {
+        "units": 120,
+        "grossWeightKg": 6.12,
+        "heightCm": 23,
+        "widthCm": 40,
+        "lengthCm": 60
+      },
+      "palletization": {
+        "unitsPerPallet": 3360,
+        "cartonsPerPallet": 28,
+        "layersPerPallet": 7,
+        "cartonsPerLayer": 4,
+        "unitsPerLayer": 480,
+        "heightCm": 180,
+        "widthCm": 80,
+        "lengthCm": 120,
+        "palletType": "Paleta Jednorazowa"
+      }
+    },
+    {
+      "code": "WIT-C",
+      "name": "WITAMINA C",
+      "unit": {
+        "netWeightKg": 0.067,
+        "grossWeightKg": 0.092,
+        "heightCm": 11.4,
+        "widthCm": 5.8,
+        "depthCm": 11.4
+      },
+      "carton": {
+        "units": 120,
+        "grossWeightKg": 11.04,
+        "heightCm": 23,
+        "widthCm": 40,
+        "lengthCm": 60
+      },
+      "palletization": {
+        "unitsPerPallet": 3360,
+        "cartonsPerPallet": 28,
+        "layersPerPallet": 7,
+        "cartonsPerLayer": 4,
+        "unitsPerLayer": 480,
+        "heightCm": 180,
+        "widthCm": 80,
+        "lengthCm": 120,
+        "palletType": "Paleta Jednorazowa"
+      }
+    },
+    {
+      "code": "WIT-MAGN",
+      "name": "MAGNEZ+B6",
+      "unit": {
+        "netWeightKg": 0.102,
+        "grossWeightKg": 0.12,
+        "heightCm": 11.7,
+        "widthCm": 6.4,
+        "depthCm": 11.7
+      },
+      "carton": {
+        "units": 108,
+        "grossWeightKg": 12.96,
+        "heightCm": 23,
+        "widthCm": 40,
+        "lengthCm": 60
+      },
+      "palletization": {
+        "unitsPerPallet": 3024,
+        "cartonsPerPallet": 28,
+        "layersPerPallet": 7,
+        "cartonsPerLayer": 4,
+        "unitsPerLayer": 120,
+        "heightCm": 180,
+        "widthCm": 80,
+        "lengthCm": 120,
+        "palletType": "Paleta Jednorazowa"
+      }
+    },
+    {
+      "code": "SHOT-SOUR-APP-SK",
+      "name": "BOMBA SHOT",
+      "unit": {
+        "netWeightKg": 0.066,
+        "grossWeightKg": 0.1,
+        "heightCm": 11.6,
+        "widthCm": 3.5,
+        "depthCm": 11.6
+      },
+      "carton": {
+        "units": 20,
+        "grossWeightKg": 2.084,
+        "heightCm": 12.7,
+        "widthCm": 12.2,
+        "lengthCm": 18
+      },
+      "palletization": {
+        "unitsPerPallet": 9360,
+        "cartonsPerPallet": 468,
+        "layersPerPallet": 13,
+        "cartonsPerLayer": 36,
+        "unitsPerLayer": 720,
+        "heightCm": 180,
+        "widthCm": 80,
+        "lengthCm": 120,
+        "palletType": "Paleta Jednorazowa"
+      }
+    },
+    {
+      "code": "ENR-GEL-CLASS",
+      "name": "ŻEL ENERGETYCZNY CLASSIC DZIK®",
+      "unit": {
+        "netWeightKg": 0.066,
+        "grossWeightKg": 0.069,
+        "heightCm": 17.9,
+        "widthCm": 0.5,
+        "depthCm": 17.9
+      },
+      "carton": {
+        "units": 72,
+        "grossWeightKg": 5.452,
+        "heightCm": 20,
+        "widthCm": 29,
+        "lengthCm": 37
+      },
+      "palletization": {
+        "unitsPerPallet": 3456,
+        "cartonsPerPallet": 48,
+        "layersPerPallet": 8,
+        "cartonsPerLayer": 8,
+        "unitsPerLayer": 576,
+        "heightCm": 140,
+        "widthCm": 80,
+        "lengthCm": 120,
+        "palletType": "Paleta Jednorazowa"
+      }
+    },
+    {
+      "code": "ENR-GEL-GRAPE",
+      "name": "ŻEL ENERGETYCZNY GRAPE DZIK®",
+      "unit": {
+        "netWeightKg": 0.066,
+        "grossWeightKg": 0.069,
+        "heightCm": 17.9,
+        "widthCm": 0.5,
+        "depthCm": 17.9
+      },
+      "carton": {
+        "units": 72,
+        "grossWeightKg": 5.452,
+        "heightCm": 20,
+        "widthCm": 29,
+        "lengthCm": 37
+      },
+      "palletization": {
+        "unitsPerPallet": 3456,
+        "cartonsPerPallet": 48,
+        "layersPerPallet": 8,
+        "cartonsPerLayer": 8,
+        "unitsPerLayer": 576,
+        "heightCm": 140,
+        "widthCm": 80,
+        "lengthCm": 120,
+        "palletType": "Paleta Jednorazowa"
+      }
+    },
+    {
+      "code": "ENR-GEL-LEM",
+      "name": "ŻEL ENERGETYCZNY LEMON DZIK®",
+      "unit": {
+        "netWeightKg": 0.066,
+        "grossWeightKg": 0.069,
+        "heightCm": 17.9,
+        "widthCm": 0.5,
+        "depthCm": 17.9
+      },
+      "carton": {
+        "units": 72,
+        "grossWeightKg": 5.452,
+        "heightCm": 20,
+        "widthCm": 29,
+        "lengthCm": 37
+      },
+      "palletization": {
+        "unitsPerPallet": 3456,
+        "cartonsPerPallet": 48,
+        "layersPerPallet": 8,
+        "cartonsPerLayer": 8,
+        "unitsPerLayer": 576,
+        "heightCm": 140,
+        "widthCm": 80,
+        "lengthCm": 120,
+        "palletType": "Paleta Jednorazowa"
+      }
+    },
+    {
+      "code": "BIAŁ-BIAŁ-CZEK",
+      "name": "ODŻYWKA BIAŁKOWA O SMAKU BIAŁEJ CZEKOLADY",
+      "unit": {
+        "netWeightKg": 0.704,
+        "grossWeightKg": 0.825,
+        "heightCm": 21.8,
+        "widthCm": 12,
+        "depthCm": 21.8
+      },
+      "carton": {
+        "units": 9,
+        "grossWeightKg": 8,
+        "heightCm": 23,
+        "widthCm": 36.5,
+        "lengthCm": 40
+      },
+      "palletization": {
+        "unitsPerPallet": 432,
+        "cartonsPerPallet": 48,
+        "layersPerPallet": 8,
+        "cartonsPerLayer": 6,
+        "unitsPerLayer": 54,
+        "heightCm": 195,
+        "widthCm": 80,
+        "lengthCm": 120,
+        "palletType": "Paleta Jednorazowa"
+      }
+    },
+    {
+      "code": "BIAŁ-CZEK",
+      "name": "ODŻYWKA BIAŁKOWA O SMAKU CZEKOLADOWYM",
+      "unit": {
+        "netWeightKg": 0.704,
+        "grossWeightKg": 0.825,
+        "heightCm": 21.8,
+        "widthCm": 12,
+        "depthCm": 21.8
+      },
+      "carton": {
+        "units": 9,
+        "grossWeightKg": 8,
+        "heightCm": 23,
+        "widthCm": 36.5,
+        "lengthCm": 40
+      },
+      "palletization": {
+        "unitsPerPallet": 432,
+        "cartonsPerPallet": 48,
+        "layersPerPallet": 8,
+        "cartonsPerLayer": 6,
+        "unitsPerLayer": 54,
+        "heightCm": 195,
+        "widthCm": 80,
+        "lengthCm": 120,
+        "palletType": "Paleta Jednorazowa"
+      }
+    },
+    {
+      "code": "BIAŁ-WANI",
+      "name": "ODŻYWKA BIAŁKOWA O SMAKU WANILIOWYM",
+      "unit": {
+        "netWeightKg": 0.704,
+        "grossWeightKg": 0.825,
+        "heightCm": 21.8,
+        "widthCm": 12,
+        "depthCm": 21.8
+      },
+      "carton": {
+        "units": 9,
+        "grossWeightKg": 8,
+        "heightCm": 23,
+        "widthCm": 36.5,
+        "lengthCm": 40
+      },
+      "palletization": {
+        "unitsPerPallet": 432,
+        "cartonsPerPallet": 48,
+        "layersPerPallet": 8,
+        "cartonsPerLayer": 6,
+        "unitsPerLayer": 54,
+        "heightCm": 195,
+        "widthCm": 80,
+        "lengthCm": 120,
+        "palletType": "Paleta Jednorazowa"
+      }
+    },
+    {
+      "code": "BIAŁ-TRUS",
+      "name": "ODŻYWKA BIAŁKOWA O SMAKU TRUSKAWKOWYM",
+      "unit": {
+        "netWeightKg": 0.704,
+        "grossWeightKg": 0.825,
+        "heightCm": 21.8,
+        "widthCm": 12,
+        "depthCm": 21.8
+      },
+      "carton": {
+        "units": 9,
+        "grossWeightKg": 8,
+        "heightCm": 23,
+        "widthCm": 36.5,
+        "lengthCm": 40
+      },
+      "palletization": {
+        "unitsPerPallet": 432,
+        "cartonsPerPallet": 48,
+        "layersPerPallet": 8,
+        "cartonsPerLayer": 6,
+        "unitsPerLayer": 54,
+        "heightCm": 195,
+        "widthCm": 80,
+        "lengthCm": 120,
+        "palletType": "Paleta Jednorazowa"
+      }
+    },
+    {
+      "code": "BIAŁ-CIAS",
+      "name": "ODŻYWKA BIAŁKOWA O SMAKU CIASTECZKOWYM",
+      "unit": {
+        "netWeightKg": 0.704,
+        "grossWeightKg": 0.825,
+        "heightCm": 21.8,
+        "widthCm": 12,
+        "depthCm": 21.8
+      },
+      "carton": {
+        "units": 9,
+        "grossWeightKg": 8,
+        "heightCm": 23,
+        "widthCm": 36.5,
+        "lengthCm": 40
+      },
+      "palletization": {
+        "unitsPerPallet": 432,
+        "cartonsPerPallet": 48,
+        "layersPerPallet": 8,
+        "cartonsPerLayer": 6,
+        "unitsPerLayer": 54,
+        "heightCm": 195,
+        "widthCm": 80,
+        "lengthCm": 120,
+        "palletType": "Paleta Jednorazowa"
+      }
+    },
+    {
+      "code": "BIAŁ-SŁON-KARM",
+      "name": "ODŻYWKA BIAŁKOWA O SMAKU SŁONEGO KARMELU",
+      "unit": {
+        "netWeightKg": 0.704,
+        "grossWeightKg": 0.825,
+        "heightCm": 21.8,
+        "widthCm": 12,
+        "depthCm": 21.8
+      },
+      "carton": {
+        "units": 9,
+        "grossWeightKg": 8,
+        "heightCm": 23,
+        "widthCm": 36.5,
+        "lengthCm": 40
+      },
+      "palletization": {
+        "unitsPerPallet": 432,
+        "cartonsPerPallet": 48,
+        "layersPerPallet": 8,
+        "cartonsPerLayer": 6,
+        "unitsPerLayer": 54,
+        "heightCm": 195,
+        "widthCm": 80,
+        "lengthCm": 120,
+        "palletType": "Paleta Jednorazowa"
+      }
+    },
+    {
+      "code": "LIMI-SOUR-APP",
+      "name": "Limitless DZIK",
+      "unit": {
+        "netWeightKg": 0.245,
+        "grossWeightKg": 0.245,
+        "heightCm": 9.4,
+        "widthCm": 10,
+        "depthCm": 9.4
+      },
+      "carton": {
+        "units": 40,
+        "grossWeightKg": 10.52,
+        "heightCm": 22,
+        "widthCm": 40,
+        "lengthCm": 60
+      },
+      "palletization": {
+        "unitsPerPallet": 1120,
+        "cartonsPerPallet": 28,
+        "layersPerPallet": 7,
+        "cartonsPerLayer": 4,
+        "unitsPerLayer": 160,
+        "heightCm": 185,
+        "widthCm": 80,
+        "lengthCm": 120,
+        "palletType": "Paleta Jednorazowa"
+      }
+    },
+    {
+      "code": "SOS-CINN",
+      "name": "Sos Zero Cinnamon Roll DZIK",
+      "unit": {
+        "netWeightKg": 0.425,
+        "grossWeightKg": 0.478,
+        "heightCm": 16.5,
+        "widthCm": 9.1,
+        "depthCm": 16.5
+      },
+      "carton": {
+        "units": 6,
+        "grossWeightKg": 2.97,
+        "heightCm": 17.5,
+        "widthCm": 18.5,
+        "lengthCm": 18.5
+      },
+      "palletization": {
+        "unitsPerPallet": 864,
+        "cartonsPerPallet": 144,
+        "layersPerPallet": 6,
+        "cartonsPerLayer": 24,
+        "unitsPerLayer": 144,
+        "heightCm": 175,
+        "widthCm": 74,
+        "lengthCm": 111,
+        "palletType": "Paleta Jednorazowa"
+      }
+    },
+    {
+      "code": "SOS-CZEK-ORZ",
+      "name": "SOS ZERO MILKY NUTBAR",
+      "unit": {
+        "netWeightKg": 0.425,
+        "grossWeightKg": 0.478,
+        "heightCm": 16.5,
+        "widthCm": 9.1,
+        "depthCm": 16.5
+      },
+      "carton": {
+        "units": 6,
+        "grossWeightKg": 2.97,
+        "heightCm": 17.5,
+        "widthCm": 18.5,
+        "lengthCm": 18.5
+      },
+      "palletization": {
+        "unitsPerPallet": 864,
+        "cartonsPerPallet": 144,
+        "layersPerPallet": 6,
+        "cartonsPerLayer": 24,
+        "unitsPerLayer": 144,
+        "heightCm": 175,
+        "widthCm": 74,
+        "lengthCm": 111,
+        "palletType": "Paleta Jednorazowa"
+      }
+    },
+    {
+      "code": "SOS-JAGO",
+      "name": "SOS ZERO BLUEBERRY",
+      "unit": {
+        "netWeightKg": 0.425,
+        "grossWeightKg": 0.478,
+        "heightCm": 16.5,
+        "widthCm": 9.1,
+        "depthCm": 16.5
+      },
+      "carton": {
+        "units": 6,
+        "grossWeightKg": 2.97,
+        "heightCm": 17.5,
+        "widthCm": 18.5,
+        "lengthCm": 18.5
+      },
+      "palletization": {
+        "unitsPerPallet": 864,
+        "cartonsPerPallet": 144,
+        "layersPerPallet": 6,
+        "cartonsPerLayer": 24,
+        "unitsPerLayer": 144,
+        "heightCm": 175,
+        "widthCm": 74,
+        "lengthCm": 111,
+        "palletType": "Paleta Jednorazowa"
+      }
+    },
+    {
+      "code": "SOS-KARM",
+      "name": "Sos Zero Karmelowy Caramel",
+      "unit": {
+        "netWeightKg": 0.425,
+        "grossWeightKg": 0.478,
+        "heightCm": 16.5,
+        "widthCm": 9.1,
+        "depthCm": 16.5
+      },
+      "carton": {
+        "units": 6,
+        "grossWeightKg": 2.97,
+        "heightCm": 17.5,
+        "widthCm": 18.5,
+        "lengthCm": 18.5
+      },
+      "palletization": {
+        "unitsPerPallet": 864,
+        "cartonsPerPallet": 144,
+        "layersPerPallet": 6,
+        "cartonsPerLayer": 24,
+        "unitsPerLayer": 144,
+        "heightCm": 175,
+        "widthCm": 74,
+        "lengthCm": 111,
+        "palletType": "Paleta Jednorazowa"
+      }
+    },
+    {
+      "code": "SOS-KLON",
+      "name": "Sos Zero Klonowy",
+      "unit": {
+        "netWeightKg": 0.425,
+        "grossWeightKg": 0.478,
+        "heightCm": 16.5,
+        "widthCm": 9.1,
+        "depthCm": 16.5
+      },
+      "carton": {
+        "units": 6,
+        "grossWeightKg": 2.97,
+        "heightCm": 17.5,
+        "widthCm": 18.5,
+        "lengthCm": 18.5
+      },
+      "palletization": {
+        "unitsPerPallet": 864,
+        "cartonsPerPallet": 144,
+        "layersPerPallet": 6,
+        "cartonsPerLayer": 24,
+        "unitsPerLayer": 144,
+        "heightCm": 175,
+        "widthCm": 74,
+        "lengthCm": 111,
+        "palletType": "Paleta Jednorazowa"
+      }
+    },
+    {
+      "code": "SOS-MALI",
+      "name": "SOS ZERO RASPBERRY",
+      "unit": {
+        "netWeightKg": 0.425,
+        "grossWeightKg": 0.478,
+        "heightCm": 16.5,
+        "widthCm": 9.1,
+        "depthCm": 16.5
+      },
+      "carton": {
+        "units": 6,
+        "grossWeightKg": 2.97,
+        "heightCm": 17.5,
+        "widthCm": 18.5,
+        "lengthCm": 18.5
+      },
+      "palletization": {
+        "unitsPerPallet": 864,
+        "cartonsPerPallet": 144,
+        "layersPerPallet": 6,
+        "cartonsPerLayer": 24,
+        "unitsPerLayer": 144,
+        "heightCm": 175,
+        "widthCm": 74,
+        "lengthCm": 111,
+        "palletType": "Paleta Jednorazowa"
+      }
+    },
+    {
+      "code": "SOS-TRUS",
+      "name": "SOS ZERO STRAWBERRY",
+      "unit": {
+        "netWeightKg": 0.425,
+        "grossWeightKg": 0.478,
+        "heightCm": 16.5,
+        "widthCm": 9.1,
+        "depthCm": 16.5
+      },
+      "carton": {
+        "units": 6,
+        "grossWeightKg": 2.97,
+        "heightCm": 17.5,
+        "widthCm": 18.5,
+        "lengthCm": 18.5
+      },
+      "palletization": {
+        "unitsPerPallet": 864,
+        "cartonsPerPallet": 144,
+        "layersPerPallet": 6,
+        "cartonsPerLayer": 24,
+        "unitsPerLayer": 144,
+        "heightCm": 175,
+        "widthCm": 74,
+        "lengthCm": 111,
+        "palletType": "Paleta Jednorazowa"
+      }
+    },
+    {
+      "code": "80006",
+      "name": "Kawa Czekoladowa Headshot",
+      "unit": {
+        "netWeightKg": 0.15,
+        "grossWeightKg": 0.192,
+        "heightCm": 14.2,
+        "widthCm": 7,
+        "depthCm": 14.2
+      },
+      "carton": {
+        "units": 12,
+        "grossWeightKg": 2.5,
+        "heightCm": 16,
+        "widthCm": 32.5,
+        "lengthCm": 22
+      },
+      "palletization": {
+        "unitsPerPallet": 1080,
+        "cartonsPerPallet": 90,
+        "layersPerPallet": 9,
+        "cartonsPerLayer": 10,
+        "unitsPerLayer": 120,
+        "heightCm": 173,
+        "widthCm": 80,
+        "lengthCm": 120,
+        "palletType": "Paleta Jednorazowa"
+      }
+    }
+  ],
+  "palletizationGroups": [
+    {
+      "id": "PAL-01",
+      "unitsPerCarton": 21,
+      "cartonHeightCm": 17,
+      "cartonWidthCm": 34,
+      "cartonLengthCm": 74,
+      "cartonsPerPallet": 30,
+      "layersPerPallet": 10,
+      "cartonsPerLayer": 3,
+      "palletHeightCm": 180,
+      "palletWidthCm": 80,
+      "palletLengthCm": 120,
+      "palletType": "Paleta Jednorazowa",
+      "productCodes": [
+        "KREA-COLA",
+        "KREA-COLA-LEMO",
+        "KREA-GRAP",
+        "KREA-MANG",
+        "KREA-SOUR-APPL",
+        "KREA-TRUS-KIWI",
+        "KREA-NATU",
+        "CYTR-GRAP",
+        "CYTR-SOUR-APPL",
+        "CYTR-CYTR",
+        "CYTR-ARBU",
+        "CYTR-COLA-LEMO"
+      ]
+    },
+    {
+      "id": "PAL-02",
+      "unitsPerCarton": 44,
+      "cartonHeightCm": 23,
+      "cartonWidthCm": 40,
+      "cartonLengthCm": 60,
+      "cartonsPerPallet": 28,
+      "layersPerPallet": 7,
+      "cartonsPerLayer": 4,
+      "palletHeightCm": 180,
+      "palletWidthCm": 80,
+      "palletLengthCm": 120,
+      "palletType": "Paleta Jednorazowa",
+      "productCodes": [
+        "BOMB-GRAP",
+        "BOMB-SOUR-APPL",
+        "BOMB-MANG",
+        "BOMB-ARBU",
+        "BOMB-COLA"
+      ]
+    },
+    {
+      "id": "PAL-03",
+      "unitsPerCarton": 120,
+      "cartonHeightCm": 23,
+      "cartonWidthCm": 40,
+      "cartonLengthCm": 60,
+      "cartonsPerPallet": 28,
+      "layersPerPallet": 7,
+      "cartonsPerLayer": 4,
+      "palletHeightCm": 180,
+      "palletWidthCm": 80,
+      "palletLengthCm": 120,
+      "palletType": "Paleta Jednorazowa",
+      "productCodes": [
+        "WIT-MULT",
+        "WIT-DOBR-SEN",
+        "WIT-CYNK",
+        "WIT-D3K2",
+        "WIT-C"
+      ]
+    },
+    {
+      "id": "PAL-04",
+      "unitsPerCarton": 108,
+      "cartonHeightCm": 23,
+      "cartonWidthCm": 40,
+      "cartonLengthCm": 60,
+      "cartonsPerPallet": 28,
+      "layersPerPallet": 7,
+      "cartonsPerLayer": 4,
+      "palletHeightCm": 180,
+      "palletWidthCm": 80,
+      "palletLengthCm": 120,
+      "palletType": "Paleta Jednorazowa",
+      "productCodes": [
+        "WIT-MAGN"
+      ]
+    },
+    {
+      "id": "PAL-05",
+      "unitsPerCarton": 20,
+      "cartonHeightCm": 12.7,
+      "cartonWidthCm": 12.2,
+      "cartonLengthCm": 18,
+      "cartonsPerPallet": 468,
+      "layersPerPallet": 13,
+      "cartonsPerLayer": 36,
+      "palletHeightCm": 180,
+      "palletWidthCm": 80,
+      "palletLengthCm": 120,
+      "palletType": "Paleta Jednorazowa",
+      "productCodes": [
+        "SHOT-SOUR-APP-SK"
+      ]
+    },
+    {
+      "id": "PAL-06",
+      "unitsPerCarton": 72,
+      "cartonHeightCm": 20,
+      "cartonWidthCm": 29,
+      "cartonLengthCm": 37,
+      "cartonsPerPallet": 48,
+      "layersPerPallet": 8,
+      "cartonsPerLayer": 8,
+      "palletHeightCm": 140,
+      "palletWidthCm": 80,
+      "palletLengthCm": 120,
+      "palletType": "Paleta Jednorazowa",
+      "productCodes": [
+        "ENR-GEL-CLASS",
+        "ENR-GEL-GRAPE",
+        "ENR-GEL-LEM"
+      ]
+    },
+    {
+      "id": "PAL-07",
+      "unitsPerCarton": 9,
+      "cartonHeightCm": 23,
+      "cartonWidthCm": 36.5,
+      "cartonLengthCm": 40,
+      "cartonsPerPallet": 48,
+      "layersPerPallet": 8,
+      "cartonsPerLayer": 6,
+      "palletHeightCm": 195,
+      "palletWidthCm": 80,
+      "palletLengthCm": 120,
+      "palletType": "Paleta Jednorazowa",
+      "productCodes": [
+        "BIAŁ-BIAŁ-CZEK",
+        "BIAŁ-CZEK",
+        "BIAŁ-WANI",
+        "BIAŁ-TRUS",
+        "BIAŁ-CIAS",
+        "BIAŁ-SŁON-KARM"
+      ]
+    },
+    {
+      "id": "PAL-08",
+      "unitsPerCarton": 40,
+      "cartonHeightCm": 22,
+      "cartonWidthCm": 40,
+      "cartonLengthCm": 60,
+      "cartonsPerPallet": 28,
+      "layersPerPallet": 7,
+      "cartonsPerLayer": 4,
+      "palletHeightCm": 185,
+      "palletWidthCm": 80,
+      "palletLengthCm": 120,
+      "palletType": "Paleta Jednorazowa",
+      "productCodes": [
+        "LIMI-SOUR-APP"
+      ]
+    },
+    {
+      "id": "PAL-09",
+      "unitsPerCarton": 6,
+      "cartonHeightCm": 17.5,
+      "cartonWidthCm": 18.5,
+      "cartonLengthCm": 18.5,
+      "cartonsPerPallet": 144,
+      "layersPerPallet": 6,
+      "cartonsPerLayer": 24,
+      "palletHeightCm": 175,
+      "palletWidthCm": 74,
+      "palletLengthCm": 111,
+      "palletType": "Paleta Jednorazowa",
+      "productCodes": [
+        "SOS-CINN",
+        "SOS-CZEK-ORZ",
+        "SOS-JAGO",
+        "SOS-KARM",
+        "SOS-KLON",
+        "SOS-MALI",
+        "SOS-TRUS"
+      ]
+    },
+    {
+      "id": "PAL-10",
+      "unitsPerCarton": 12,
+      "cartonHeightCm": 16,
+      "cartonWidthCm": 32.5,
+      "cartonLengthCm": 22,
+      "cartonsPerPallet": 90,
+      "layersPerPallet": 9,
+      "cartonsPerLayer": 10,
+      "palletHeightCm": 173,
+      "palletWidthCm": 80,
+      "palletLengthCm": 120,
+      "palletType": "Paleta Jednorazowa",
+      "productCodes": [
+        "80006"
+      ]
+    }
+  ]
+}
