@@ -118,7 +118,7 @@ body{padding-bottom:80px}.shell{padding:7px}.app{border-radius:14px}.header{grid
 <div class="sidetitle">Przeliczenie zamówienia</div>
 <div id="details">Brak danych.</div>
 <div class="clearwrap"><button class="clear" id="clear" type="button">Wyczyść wszystkie pola</button></div>
-<div class="note">V5 korzysta z oficjalnego MASTERDATA tam, gdzie dane są dostępne. Napoje i wafle pozostają tymczasowo na danych V4.</div>
+<div class="note">V5 korzysta z oficjalnego MASTERDATA tam, gdzie dane są dostępne. Energetyki, pozostałe napoje i wafle pozostają tymczasowo na danych V4.</div>
 </div>
 </aside>
 </main>
@@ -155,7 +155,7 @@ function palletWord(n){
 function rowHtml(prod,id,removable){
  var source=prod.source==="MASTERDATA"?"MASTERDATA":"V4";
  return '<div class="card" id="wrap_'+id+'">'+
- '<div class="card-head"><div><div class="name">'+prod.name+'</div><div class="meta-small">'+prod.unitsPerCarton+' szt./opak. • '+prod.cartonsPerLayer+' opak./warstwę'+(prod.weightKnown?' • '+prod.cartonGrossWeightKg.toFixed(2)+' kg/opak.':'')+'</div></div>'+
+ '<div class="card-head"><div><div class="name">'+prod.name+'</div><div class="meta-small">'+prod.carton.units+' szt./opak. • '+prod.palletization.cartonsPerLayer+' opak./warstwę'+((prod.weightKnown!==false && prod.carton.grossWeightKg!=null)?' • '+prod.carton.grossWeightKg.toFixed(2)+' kg/opak.':'')+'</div></div>'+
  '<div>'+(removable?'<button class="remove" data-remove="'+id+'">Usuń</button>':'<span class="tag">'+source+'</span>')+'</div></div>'+
  '<div class="inputrow"><input id="'+id+'" inputmode="numeric" pattern="[0-9+]*" autocomplete="off" placeholder="0">'+
  '<button class="plus" data-plus="'+id+'" type="button">+</button><span class="unit">szt.</span></div>'+
@@ -177,7 +177,7 @@ function live(id,p){
  if(!r.ok){e.style.borderColor="#e30613";o.innerHTML='<span class="error">Nieprawidłowy zapis</span>';return;}
  e.style.borderColor="#cfd1d5";
  if(!r.total){o.innerHTML="";return;}
- var cartons=Math.ceil(r.total/p.unitsPerCarton);
+ var cartons=Math.ceil(r.total/p.carton.units);
  o.innerHTML='<strong>'+r.total+' szt.</strong> → '+cartons+' opak.';
 }
 function renderFixed(){
@@ -189,11 +189,11 @@ function renderFixed(){
 function fillSelector(){
  var s=document.getElementById("selector");
  s.innerHTML='<option value="">Wybierz produkt…</option>';
- DB.products.filter(function(p){return FIXED.indexOf(p.id)<0;})
+ DB.products.filter(function(p){return FIXED.indexOf(p.code)<0;})
  .sort(function(a,b){return a.name.localeCompare(b.name,"pl");})
  .forEach(function(p){
    var o=document.createElement("option");
-   o.value=p.id;
+   o.value=p.code;
    o.textContent=p.name+(p.code?" ["+p.code+"]":"");
    s.appendChild(o);
  });
@@ -228,20 +228,20 @@ function calc(){
    var e=document.getElementById(x.id),r=parseExpr(e.value),p=x.p;
    if(!r.ok){bad=true;e.style.borderColor="#e30613";return;}
    if(!r.total)return;
-   var cartons=Math.ceil(r.total/p.unitsPerCarton);
+   var cartons=Math.ceil(r.total/p.carton.units);
 
    // Space proxy: fraction of a full layer * carton height.
    // This keeps compatibility with the V4 mixed-layer approximation while using official cartons/layer.
-   spaceDemand += cartons*(1/p.cartonsPerLayer)*p.cartonHeightCm;
+   spaceDemand += cartons*(1/p.palletization.cartonsPerLayer)*p.carton.heightCm;
 
-   if(p.weightKnown && p.cartonGrossWeightKg!=null){
-     totalWeight += cartons*p.cartonGrossWeightKg;
+   if(p.weightKnown!==false && p.carton.grossWeightKg!=null){
+     totalWeight += cartons*p.carton.grossWeightKg;
    }else{
      unknownWeight.push(p.name);
    }
 
    rows.push('<div class="drow"><strong>'+p.name+'</strong><br>'+r.total+' szt. → '+cartons+' opak.'+
-     (p.weightKnown?' • '+(cartons*p.cartonGrossWeightKg).toFixed(1)+' kg':' • <span class="warn">brak danych wagowych</span>')+
+     ((p.weightKnown!==false && p.carton.grossWeightKg!=null)?' • '+(cartons*p.carton.grossWeightKg).toFixed(1)+' kg':' • <span class="warn">brak danych wagowych</span>')+
      '</div>');
  });
 
@@ -293,7 +293,7 @@ function clearAll(){
 }
 function init(db){
  DB=db;
- db.products.forEach(function(p){BY_ID[p.id]=p;});
+ db.products.forEach(function(p){BY_ID[p.code]=p;});
  renderFixed();fillSelector();
  document.getElementById("add").addEventListener("click",addProduct);
  document.getElementById("calc").addEventListener("click",calc);
