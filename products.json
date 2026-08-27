@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "source": "MASTERDATA for FM - TEMPLATE (2).xlsx",
   "settings": {
-    "keyCustomerWeightLimitKg": 800,
+    "keyCustomerWeightLimitKg": 900,
     "weightLimitDefaultEnabled": false
   },
   "stats": {
