@@ -194,7 +194,7 @@ function fillSelector(){
  .forEach(function(p){
    var o=document.createElement("option");
    o.value=p.code;
-   o.textContent=p.name+(p.code?" ["+p.code+"]":"");
+   o.textContent=p.name;
    s.appendChild(o);
  });
 }
