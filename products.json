@@ -169,57 +169,80 @@
       "fixed": false
     },
     {
-      "code": "LEGACY_WAFERS",
-      "name": "Wafle standard",
-      "source": "V4 fallback",
-      "unit": {},
-      "carton": {
-        "units": 12,
-        "grossWeightKg": null,
-        "heightCm": 20,
-        "widthCm": null,
-        "lengthCm": null
-      },
-      "palletization": {
-        "unitsPerPallet": 768,
-        "cartonsPerPallet": 64,
-        "layersPerPallet": 8,
-        "cartonsPerLayer": 8,
-        "unitsPerLayer": 96,
-        "heightCm": 174.4,
-        "widthCm": 80,
-        "lengthCm": 120,
-        "palletType": "EUR"
-      },
-      "weightKnown": false,
-      "fixed": false
-    },
-    {
-      "code": "LEGACY_WAFERS_SPECIAL",
-      "name": "Wafle Zielona Cebulka / Texas BBQ",
-      "source": "V4 fallback",
-      "unit": {},
-      "carton": {
-        "units": 12,
-        "grossWeightKg": null,
-        "heightCm": 20,
-        "widthCm": null,
-        "lengthCm": null
-      },
-      "palletization": {
-        "unitsPerPallet": 960,
-        "cartonsPerPallet": 80,
-        "layersPerPallet": 10,
-        "cartonsPerLayer": 8,
-        "unitsPerLayer": 96,
-        "heightCm": 214.4,
-        "widthCm": 80,
-        "lengthCm": 120,
-        "palletType": "EUR"
-      },
-      "weightKnown": false,
-      "fixed": false
-    },
+  "code": "LEGACY_WAFERS_CHOCOLATE",
+  "name": "Wafle czekoladowe",
+  "source": "V4 fallback",
+  "unit": {},
+  "carton": {
+    "units": 12,
+    "grossWeightKg": 2.4,
+    "heightCm": 20,
+    "widthCm": null,
+    "lengthCm": null
+  },
+  "palletization": {
+    "unitsPerPallet": 768,
+    "cartonsPerPallet": 64,
+    "layersPerPallet": 8,
+    "cartonsPerLayer": 8,
+    "unitsPerLayer": 96,
+    "heightCm": 174.4,
+    "widthCm": 80,
+    "lengthCm": 120,
+    "palletType": "EUR"
+  },
+  "weightKnown": true
+},
+{
+  "code": "LEGACY_WAFERS_CHEESE",
+  "name": "Wafle serowe",
+  "source": "V4 fallback",
+  "unit": {},
+  "carton": {
+    "units": 12,
+    "grossWeightKg": 1.8,
+    "heightCm": 20,
+    "widthCm": null,
+    "lengthCm": null
+  },
+  "palletization": {
+    "unitsPerPallet": 768,
+    "cartonsPerPallet": 64,
+    "layersPerPallet": 8,
+    "cartonsPerLayer": 8,
+    "unitsPerLayer": 96,
+    "heightCm": 174.4,
+    "widthCm": 80,
+    "lengthCm": 120,
+    "palletType": "EUR"
+  },
+  "weightKnown": true
+},
+{
+  "code": "LEGACY_WAFERS_SPECIAL",
+  "name": "Wafle Zielona Cebulka / Texas BBQ",
+  "source": "V4 fallback",
+  "unit": {},
+  "carton": {
+    "units": 12,
+    "grossWeightKg": 1.8,
+    "heightCm": 20,
+    "widthCm": null,
+    "lengthCm": null
+  },
+  "palletization": {
+    "unitsPerPallet": 960,
+    "cartonsPerPallet": 80,
+    "layersPerPallet": 10,
+    "cartonsPerLayer": 8,
+    "unitsPerLayer": 96,
+    "heightCm": 214.4,
+    "widthCm": 80,
+    "lengthCm": 120,
+    "palletType": "EUR"
+  },
+  "weightKnown": true
+},
     {
       "code": "KREA-COLA",
       "name": "KREATYNA COLA DZIK",
