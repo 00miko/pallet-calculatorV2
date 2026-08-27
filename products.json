@@ -379,7 +379,7 @@
     },
     {
       "code": "GROUP_BIALKO",
-      "name": "Białko / Odżywka białkowa",
+      "name": "Białko",
       "unit": {
         "netWeightKg": 0.704,
         "grossWeightKg": 0.825,
