@@ -19,7 +19,7 @@
       "unit": {},
       "carton": {
         "units": 24,
-        "grossWeightKg": null,
+        "grossWeightKg": 13.0,
         "heightCm": 18,
         "widthCm": null,
         "lengthCm": null
@@ -35,7 +35,7 @@
         "lengthCm": 120,
         "palletType": "EUR"
       },
-      "weightKnown": false,
+      "weightKnown": true,
       "fixed": true
     },
     {
@@ -45,7 +45,7 @@
       "unit": {},
       "carton": {
         "units": 24,
-        "grossWeightKg": null,
+        "grossWeightKg": 8.8,
         "heightCm": 12,
         "widthCm": null,
         "lengthCm": null
@@ -61,7 +61,7 @@
         "lengthCm": 120,
         "palletType": "EUR"
       },
-      "weightKnown": false,
+      "weightKnown": true,
       "fixed": true
     },
     {
@@ -71,7 +71,7 @@
       "unit": {},
       "carton": {
         "units": 6,
-        "grossWeightKg": null,
+        "grossWeightKg": 9.6,
         "heightCm": 33,
         "widthCm": null,
         "lengthCm": null
@@ -87,7 +87,7 @@
         "lengthCm": 120,
         "palletType": "EUR"
       },
-      "weightKnown": false,
+      "weightKnown": true,
       "fixed": true
     },
     {
@@ -97,7 +97,7 @@
       "unit": {},
       "carton": {
         "units": 6,
-        "grossWeightKg": null,
+        "grossWeightKg": 5.6,
         "heightCm": 25,
         "widthCm": null,
         "lengthCm": null
@@ -113,7 +113,7 @@
         "lengthCm": 120,
         "palletType": "EUR"
       },
-      "weightKnown": false,
+      "weightKnown": true,
       "fixed": true
     },
     {
@@ -123,7 +123,7 @@
       "unit": {},
       "carton": {
         "units": 12,
-        "grossWeightKg": null,
+        "grossWeightKg": 9.8,
         "heightCm": 27,
         "widthCm": null,
         "lengthCm": null
@@ -139,7 +139,7 @@
         "lengthCm": 120,
         "palletType": "EUR"
       },
-      "weightKnown": false,
+      "weightKnown": true,
       "fixed": false
     },
     {
@@ -149,7 +149,7 @@
       "unit": {},
       "carton": {
         "units": 6,
-        "grossWeightKg": null,
+        "grossWeightKg": 3.4,
         "heightCm": 16,
         "widthCm": null,
         "lengthCm": null
@@ -165,7 +165,7 @@
         "lengthCm": 120,
         "palletType": "EUR"
       },
-      "weightKnown": false,
+      "weightKnown": true,
       "fixed": false
     },
     {
