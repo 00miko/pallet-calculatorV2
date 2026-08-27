@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "source": "MASTERDATA for FM - TEMPLATE (2).xlsx",
   "settings": {
     "keyCustomerWeightLimitKg": 800,
@@ -12,6 +12,214 @@
     "uniquePhysicalPalletizationGroups": 10
   },
   "products": [
+    {
+      "code": "LEGACY_CAN500",
+      "name": "Energetyk 500 ml",
+      "source": "V4 fallback",
+      "unit": {},
+      "carton": {
+        "units": 24,
+        "grossWeightKg": null,
+        "heightCm": 18,
+        "widthCm": null,
+        "lengthCm": null
+      },
+      "palletization": {
+        "unitsPerPallet": 1728,
+        "cartonsPerPallet": 72,
+        "layersPerPallet": 8,
+        "cartonsPerLayer": 9,
+        "unitsPerLayer": 216,
+        "heightCm": 158.4,
+        "widthCm": 80,
+        "lengthCm": 120,
+        "palletType": "EUR"
+      },
+      "weightKnown": false,
+      "fixed": true
+    },
+    {
+      "code": "LEGACY_CAN330",
+      "name": "Energetyk 330 ml",
+      "source": "V4 fallback",
+      "unit": {},
+      "carton": {
+        "units": 24,
+        "grossWeightKg": null,
+        "heightCm": 12,
+        "widthCm": null,
+        "lengthCm": null
+      },
+      "palletization": {
+        "unitsPerPallet": 2592,
+        "cartonsPerPallet": 108,
+        "layersPerPallet": 12,
+        "cartonsPerLayer": 9,
+        "unitsPerLayer": 216,
+        "heightCm": 158.4,
+        "widthCm": 80,
+        "lengthCm": 120,
+        "palletType": "EUR"
+      },
+      "weightKnown": false,
+      "fixed": true
+    },
+    {
+      "code": "LEGACY_PET15",
+      "name": "PET 1.5 L",
+      "source": "V4 fallback",
+      "unit": {},
+      "carton": {
+        "units": 6,
+        "grossWeightKg": null,
+        "heightCm": 33,
+        "widthCm": null,
+        "lengthCm": null
+      },
+      "palletization": {
+        "unitsPerPallet": 456,
+        "cartonsPerPallet": 76,
+        "layersPerPallet": 4,
+        "cartonsPerLayer": 19,
+        "unitsPerLayer": 114,
+        "heightCm": 146.4,
+        "widthCm": 80,
+        "lengthCm": 120,
+        "palletType": "EUR"
+      },
+      "weightKnown": false,
+      "fixed": true
+    },
+    {
+      "code": "LEGACY_PET085",
+      "name": "PET 0.85 L",
+      "source": "V4 fallback",
+      "unit": {},
+      "carton": {
+        "units": 6,
+        "grossWeightKg": null,
+        "heightCm": 25,
+        "widthCm": null,
+        "lengthCm": null
+      },
+      "palletization": {
+        "unitsPerPallet": 756,
+        "cartonsPerPallet": 126,
+        "layersPerPallet": 6,
+        "cartonsPerLayer": 21,
+        "unitsPerLayer": 126,
+        "heightCm": 164.4,
+        "widthCm": 80,
+        "lengthCm": 120,
+        "palletType": "EUR"
+      },
+      "weightKnown": false,
+      "fixed": true
+    },
+    {
+      "code": "LEGACY_ISO750",
+      "name": "Izotonik 750 ml",
+      "source": "V4 fallback",
+      "unit": {},
+      "carton": {
+        "units": 12,
+        "grossWeightKg": null,
+        "heightCm": 27,
+        "widthCm": null,
+        "lengthCm": null
+      },
+      "palletization": {
+        "unitsPerPallet": 1020,
+        "cartonsPerPallet": 85,
+        "layersPerPallet": 5,
+        "cartonsPerLayer": 17,
+        "unitsPerLayer": 204,
+        "heightCm": 149.4,
+        "widthCm": 80,
+        "lengthCm": 120,
+        "palletType": "EUR"
+      },
+      "weightKnown": false,
+      "fixed": false
+    },
+    {
+      "code": "LEGACY_WATER500",
+      "name": "Woda 500 ml",
+      "source": "V4 fallback",
+      "unit": {},
+      "carton": {
+        "units": 6,
+        "grossWeightKg": null,
+        "heightCm": 16,
+        "widthCm": null,
+        "lengthCm": null
+      },
+      "palletization": {
+        "unitsPerPallet": 1050,
+        "cartonsPerPallet": 175,
+        "layersPerPallet": 7,
+        "cartonsPerLayer": 25,
+        "unitsPerLayer": 150,
+        "heightCm": 126.4,
+        "widthCm": 80,
+        "lengthCm": 120,
+        "palletType": "EUR"
+      },
+      "weightKnown": false,
+      "fixed": false
+    },
+    {
+      "code": "LEGACY_WAFERS",
+      "name": "Wafle standard",
+      "source": "V4 fallback",
+      "unit": {},
+      "carton": {
+        "units": 12,
+        "grossWeightKg": null,
+        "heightCm": 20,
+        "widthCm": null,
+        "lengthCm": null
+      },
+      "palletization": {
+        "unitsPerPallet": 768,
+        "cartonsPerPallet": 64,
+        "layersPerPallet": 8,
+        "cartonsPerLayer": 8,
+        "unitsPerLayer": 96,
+        "heightCm": 174.4,
+        "widthCm": 80,
+        "lengthCm": 120,
+        "palletType": "EUR"
+      },
+      "weightKnown": false,
+      "fixed": false
+    },
+    {
+      "code": "LEGACY_WAFERS_SPECIAL",
+      "name": "Wafle Zielona Cebulka / Texas BBQ",
+      "source": "V4 fallback",
+      "unit": {},
+      "carton": {
+        "units": 12,
+        "grossWeightKg": null,
+        "heightCm": 20,
+        "widthCm": null,
+        "lengthCm": null
+      },
+      "palletization": {
+        "unitsPerPallet": 960,
+        "cartonsPerPallet": 80,
+        "layersPerPallet": 10,
+        "cartonsPerLayer": 8,
+        "unitsPerLayer": 96,
+        "heightCm": 214.4,
+        "widthCm": 80,
+        "lengthCm": 120,
+        "palletType": "EUR"
+      },
+      "weightKnown": false,
+      "fixed": false
+    },
     {
       "code": "KREA-COLA",
       "name": "KREATYNA COLA DZIK",
