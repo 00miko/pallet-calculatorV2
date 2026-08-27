@@ -1,0 +1,605 @@
+{
+  "schemaVersion": 3,
+  "source": "MASTERDATA grouped for Pallet Calculator V5 + temporary beverage/wafer data",
+  "settings": {
+    "keyCustomerWeightLimitKg": 900,
+    "weightLimitDefaultEnabled": false
+  },
+  "products": [
+    {
+      "code": "LEGACY_CAN500",
+      "name": "Puszka 500 ml",
+      "source": "V4 fallback",
+      "unit": {},
+      "carton": {
+        "units": 24,
+        "grossWeightKg": 13.0,
+        "heightCm": 18,
+        "widthCm": null,
+        "lengthCm": null
+      },
+      "palletization": {
+        "unitsPerPallet": 1728,
+        "cartonsPerPallet": 72,
+        "layersPerPallet": 8,
+        "cartonsPerLayer": 9,
+        "unitsPerLayer": 216,
+        "heightCm": 158.4,
+        "widthCm": 80,
+        "lengthCm": 120,
+        "palletType": "EUR"
+      },
+      "weightKnown": true,
+      "fixed": true,
+      "weightSource": "estimated"
+    },
+    {
+      "code": "LEGACY_CAN330",
+      "name": "Puszka 330 ml",
+      "source": "V4 fallback",
+      "unit": {},
+      "carton": {
+        "units": 24,
+        "grossWeightKg": 8.8,
+        "heightCm": 12,
+        "widthCm": null,
+        "lengthCm": null
+      },
+      "palletization": {
+        "unitsPerPallet": 2592,
+        "cartonsPerPallet": 108,
+        "layersPerPallet": 12,
+        "cartonsPerLayer": 9,
+        "unitsPerLayer": 216,
+        "heightCm": 158.4,
+        "widthCm": 80,
+        "lengthCm": 120,
+        "palletType": "EUR"
+      },
+      "weightKnown": true,
+      "fixed": true,
+      "weightSource": "estimated"
+    },
+    {
+      "code": "LEGACY_PET15",
+      "name": "PET 1.5 L",
+      "source": "V4 fallback",
+      "unit": {},
+      "carton": {
+        "units": 6,
+        "grossWeightKg": 9.6,
+        "heightCm": 33,
+        "widthCm": null,
+        "lengthCm": null
+      },
+      "palletization": {
+        "unitsPerPallet": 456,
+        "cartonsPerPallet": 76,
+        "layersPerPallet": 4,
+        "cartonsPerLayer": 19,
+        "unitsPerLayer": 114,
+        "heightCm": 146.4,
+        "widthCm": 80,
+        "lengthCm": 120,
+        "palletType": "EUR"
+      },
+      "weightKnown": true,
+      "fixed": true,
+      "weightSource": "estimated"
+    },
+    {
+      "code": "LEGACY_PET085",
+      "name": "PET 0.85 L",
+      "source": "V4 fallback",
+      "unit": {},
+      "carton": {
+        "units": 6,
+        "grossWeightKg": 5.6,
+        "heightCm": 25,
+        "widthCm": null,
+        "lengthCm": null
+      },
+      "palletization": {
+        "unitsPerPallet": 756,
+        "cartonsPerPallet": 126,
+        "layersPerPallet": 6,
+        "cartonsPerLayer": 21,
+        "unitsPerLayer": 126,
+        "heightCm": 164.4,
+        "widthCm": 80,
+        "lengthCm": 120,
+        "palletType": "EUR"
+      },
+      "weightKnown": true,
+      "fixed": true,
+      "weightSource": "estimated"
+    },
+    {
+      "code": "LEGACY_ISO750",
+      "name": "Izotonik 750 ml",
+      "source": "V4 fallback",
+      "unit": {},
+      "carton": {
+        "units": 12,
+        "grossWeightKg": 9.8,
+        "heightCm": 27,
+        "widthCm": null,
+        "lengthCm": null
+      },
+      "palletization": {
+        "unitsPerPallet": 1020,
+        "cartonsPerPallet": 85,
+        "layersPerPallet": 5,
+        "cartonsPerLayer": 17,
+        "unitsPerLayer": 204,
+        "heightCm": 149.4,
+        "widthCm": 80,
+        "lengthCm": 120,
+        "palletType": "EUR"
+      },
+      "weightKnown": true,
+      "fixed": false,
+      "weightSource": "estimated"
+    },
+    {
+      "code": "LEGACY_WATER500",
+      "name": "Woda 500 ml",
+      "source": "V4 fallback",
+      "unit": {},
+      "carton": {
+        "units": 6,
+        "grossWeightKg": 3.4,
+        "heightCm": 16,
+        "widthCm": null,
+        "lengthCm": null
+      },
+      "palletization": {
+        "unitsPerPallet": 1050,
+        "cartonsPerPallet": 175,
+        "layersPerPallet": 7,
+        "cartonsPerLayer": 25,
+        "unitsPerLayer": 150,
+        "heightCm": 126.4,
+        "widthCm": 80,
+        "lengthCm": 120,
+        "palletType": "EUR"
+      },
+      "weightKnown": true,
+      "fixed": false,
+      "weightSource": "estimated"
+    },
+    {
+      "code": "LEGACY_WAFERS_CHOCOLATE",
+      "name": "Wafle czekoladowe",
+      "source": "V4 fallback",
+      "unit": {},
+      "carton": {
+        "units": 12,
+        "grossWeightKg": 2.4,
+        "heightCm": 20,
+        "widthCm": null,
+        "lengthCm": null
+      },
+      "palletization": {
+        "unitsPerPallet": 768,
+        "cartonsPerPallet": 64,
+        "layersPerPallet": 8,
+        "cartonsPerLayer": 8,
+        "unitsPerLayer": 96,
+        "heightCm": 174.4,
+        "widthCm": 80,
+        "lengthCm": 120,
+        "palletType": "EUR"
+      },
+      "weightKnown": true,
+      "fixed": false,
+      "weightSource": "estimated"
+    },
+    {
+      "code": "LEGACY_WAFERS_CHEESE",
+      "name": "Wafle serowe",
+      "source": "V4 fallback",
+      "unit": {},
+      "carton": {
+        "units": 12,
+        "grossWeightKg": 1.8,
+        "heightCm": 20,
+        "widthCm": null,
+        "lengthCm": null
+      },
+      "palletization": {
+        "unitsPerPallet": 768,
+        "cartonsPerPallet": 64,
+        "layersPerPallet": 8,
+        "cartonsPerLayer": 8,
+        "unitsPerLayer": 96,
+        "heightCm": 174.4,
+        "widthCm": 80,
+        "lengthCm": 120,
+        "palletType": "EUR"
+      },
+      "weightKnown": true,
+      "fixed": false,
+      "weightSource": "estimated"
+    },
+    {
+      "code": "LEGACY_WAFERS_SPECIAL",
+      "name": "Wafle Zielona Cebulka / Texas BBQ",
+      "source": "V4 fallback",
+      "unit": {},
+      "carton": {
+        "units": 12,
+        "grossWeightKg": 1.8,
+        "heightCm": 20,
+        "widthCm": null,
+        "lengthCm": null
+      },
+      "palletization": {
+        "unitsPerPallet": 960,
+        "cartonsPerPallet": 80,
+        "layersPerPallet": 10,
+        "cartonsPerLayer": 8,
+        "unitsPerLayer": 96,
+        "heightCm": 214.4,
+        "widthCm": 80,
+        "lengthCm": 120,
+        "palletType": "EUR"
+      },
+      "weightKnown": true,
+      "fixed": false,
+      "weightSource": "estimated"
+    },
+    {
+      "code": "GROUP_KREATYNA",
+      "name": "Kreatyna",
+      "unit": {
+        "netWeightKg": 0.369,
+        "grossWeightKg": 0.455,
+        "heightCm": 15.5,
+        "widthCm": 9.9,
+        "depthCm": 15.5
+      },
+      "carton": {
+        "units": 21,
+        "grossWeightKg": 10.7,
+        "heightCm": 17,
+        "widthCm": 34,
+        "lengthCm": 74
+      },
+      "palletization": {
+        "unitsPerPallet": 630,
+        "cartonsPerPallet": 30,
+        "layersPerPallet": 10,
+        "cartonsPerLayer": 3,
+        "unitsPerLayer": 66,
+        "heightCm": 180,
+        "widthCm": 80,
+        "lengthCm": 120,
+        "palletType": "Paleta Jednorazowa"
+      },
+      "source": "MASTERDATA — grupa SKU",
+      "weightSource": "MASTERDATA",
+      "weightKnown": true
+    },
+    {
+      "code": "GROUP_CYTRULINA",
+      "name": "Cytrulina",
+      "unit": {
+        "netWeightKg": 0.54,
+        "grossWeightKg": 0.625,
+        "heightCm": 15.5,
+        "widthCm": 9.9,
+        "depthCm": 15.5
+      },
+      "carton": {
+        "units": 21,
+        "grossWeightKg": 13.74,
+        "heightCm": 17,
+        "widthCm": 34,
+        "lengthCm": 74
+      },
+      "palletization": {
+        "unitsPerPallet": 630,
+        "cartonsPerPallet": 30,
+        "layersPerPallet": 10,
+        "cartonsPerLayer": 3,
+        "unitsPerLayer": 66,
+        "heightCm": 180,
+        "widthCm": 80,
+        "lengthCm": 120,
+        "palletType": "Paleta Jednorazowa"
+      },
+      "source": "MASTERDATA — grupa SKU",
+      "weightSource": "MASTERDATA",
+      "weightKnown": true
+    },
+    {
+      "code": "GROUP_BOMBA",
+      "name": "Bomba / Przedtreningówka",
+      "unit": {
+        "netWeightKg": 0.3,
+        "grossWeightKg": 0.358,
+        "heightCm": 9.8,
+        "widthCm": 9.4,
+        "depthCm": 9.8
+      },
+      "carton": {
+        "units": 44,
+        "grossWeightKg": 15.75,
+        "heightCm": 23,
+        "widthCm": 40,
+        "lengthCm": 60
+      },
+      "palletization": {
+        "unitsPerPallet": 1232,
+        "cartonsPerPallet": 28,
+        "layersPerPallet": 7,
+        "cartonsPerLayer": 4,
+        "unitsPerLayer": 176,
+        "heightCm": 180,
+        "widthCm": 80,
+        "lengthCm": 120,
+        "palletType": "Paleta Jednorazowa"
+      },
+      "source": "MASTERDATA — grupa SKU",
+      "weightSource": "MASTERDATA",
+      "weightKnown": true
+    },
+    {
+      "code": "GROUP_GEL",
+      "name": "Gel energetyczny",
+      "unit": {
+        "netWeightKg": 0.066,
+        "grossWeightKg": 0.069,
+        "heightCm": 17.9,
+        "widthCm": 0.5,
+        "depthCm": 17.9
+      },
+      "carton": {
+        "units": 72,
+        "grossWeightKg": 5.452,
+        "heightCm": 20,
+        "widthCm": 29,
+        "lengthCm": 37
+      },
+      "palletization": {
+        "unitsPerPallet": 3456,
+        "cartonsPerPallet": 48,
+        "layersPerPallet": 8,
+        "cartonsPerLayer": 8,
+        "unitsPerLayer": 576,
+        "heightCm": 140,
+        "widthCm": 80,
+        "lengthCm": 120,
+        "palletType": "Paleta Jednorazowa"
+      },
+      "source": "MASTERDATA — grupa SKU",
+      "weightSource": "MASTERDATA",
+      "weightKnown": true
+    },
+    {
+      "code": "GROUP_BIALKO",
+      "name": "Białko / Odżywka białkowa",
+      "unit": {
+        "netWeightKg": 0.704,
+        "grossWeightKg": 0.825,
+        "heightCm": 21.8,
+        "widthCm": 12,
+        "depthCm": 21.8
+      },
+      "carton": {
+        "units": 9,
+        "grossWeightKg": 8,
+        "heightCm": 23,
+        "widthCm": 36.5,
+        "lengthCm": 40
+      },
+      "palletization": {
+        "unitsPerPallet": 432,
+        "cartonsPerPallet": 48,
+        "layersPerPallet": 8,
+        "cartonsPerLayer": 6,
+        "unitsPerLayer": 54,
+        "heightCm": 195,
+        "widthCm": 80,
+        "lengthCm": 120,
+        "palletType": "Paleta Jednorazowa"
+      },
+      "source": "MASTERDATA — grupa SKU",
+      "weightSource": "MASTERDATA",
+      "weightKnown": true
+    },
+    {
+      "code": "GROUP_SOS_SLODKI",
+      "name": "Sosy słodkie",
+      "unit": {
+        "netWeightKg": 0.425,
+        "grossWeightKg": 0.478,
+        "heightCm": 16.5,
+        "widthCm": 9.1,
+        "depthCm": 16.5
+      },
+      "carton": {
+        "units": 6,
+        "grossWeightKg": 2.97,
+        "heightCm": 17.5,
+        "widthCm": 18.5,
+        "lengthCm": 18.5
+      },
+      "palletization": {
+        "unitsPerPallet": 864,
+        "cartonsPerPallet": 144,
+        "layersPerPallet": 6,
+        "cartonsPerLayer": 24,
+        "unitsPerLayer": 144,
+        "heightCm": 175,
+        "widthCm": 74,
+        "lengthCm": 111,
+        "palletType": "Paleta Jednorazowa"
+      },
+      "source": "MASTERDATA — grupa SKU",
+      "weightSource": "MASTERDATA",
+      "weightKnown": true
+    },
+    {
+      "code": "GROUP_WITAMINY_120",
+      "name": "Witaminy (120 szt./karton)",
+      "unit": {
+        "netWeightKg": 0.081,
+        "grossWeightKg": 0.108,
+        "heightCm": 11.4,
+        "widthCm": 5.8,
+        "depthCm": 11.4
+      },
+      "carton": {
+        "units": 120,
+        "grossWeightKg": 14.56,
+        "heightCm": 23,
+        "widthCm": 40,
+        "lengthCm": 60
+      },
+      "palletization": {
+        "unitsPerPallet": 3360,
+        "cartonsPerPallet": 28,
+        "layersPerPallet": 7,
+        "cartonsPerLayer": 4,
+        "unitsPerLayer": 480,
+        "heightCm": 180,
+        "widthCm": 80,
+        "lengthCm": 120,
+        "palletType": "Paleta Jednorazowa"
+      },
+      "source": "MASTERDATA — grupa SKU; waga konserwatywna (najcięższy karton)",
+      "weightSource": "MASTERDATA-max",
+      "weightKnown": true
+    },
+    {
+      "code": "GROUP_MAGNEZ",
+      "name": "Magnez+B6",
+      "unit": {
+        "netWeightKg": 0.102,
+        "grossWeightKg": 0.12,
+        "heightCm": 11.7,
+        "widthCm": 6.4,
+        "depthCm": 11.7
+      },
+      "carton": {
+        "units": 108,
+        "grossWeightKg": 12.96,
+        "heightCm": 23,
+        "widthCm": 40,
+        "lengthCm": 60
+      },
+      "palletization": {
+        "unitsPerPallet": 3024,
+        "cartonsPerPallet": 28,
+        "layersPerPallet": 7,
+        "cartonsPerLayer": 4,
+        "unitsPerLayer": 120,
+        "heightCm": 180,
+        "widthCm": 80,
+        "lengthCm": 120,
+        "palletType": "Paleta Jednorazowa"
+      },
+      "source": "MASTERDATA",
+      "weightSource": "MASTERDATA",
+      "weightKnown": true
+    },
+    {
+      "code": "GROUP_BOMBA_SHOT",
+      "name": "Bomba Shot",
+      "unit": {
+        "netWeightKg": 0.066,
+        "grossWeightKg": 0.1,
+        "heightCm": 11.6,
+        "widthCm": 3.5,
+        "depthCm": 11.6
+      },
+      "carton": {
+        "units": 20,
+        "grossWeightKg": 2.084,
+        "heightCm": 12.7,
+        "widthCm": 12.2,
+        "lengthCm": 18
+      },
+      "palletization": {
+        "unitsPerPallet": 9360,
+        "cartonsPerPallet": 468,
+        "layersPerPallet": 13,
+        "cartonsPerLayer": 36,
+        "unitsPerLayer": 720,
+        "heightCm": 180,
+        "widthCm": 80,
+        "lengthCm": 120,
+        "palletType": "Paleta Jednorazowa"
+      },
+      "source": "MASTERDATA",
+      "weightSource": "MASTERDATA",
+      "weightKnown": true
+    },
+    {
+      "code": "GROUP_LIMITLESS",
+      "name": "Limitless",
+      "unit": {
+        "netWeightKg": 0.245,
+        "grossWeightKg": 0.245,
+        "heightCm": 9.4,
+        "widthCm": 10,
+        "depthCm": 9.4
+      },
+      "carton": {
+        "units": 40,
+        "grossWeightKg": 10.52,
+        "heightCm": 22,
+        "widthCm": 40,
+        "lengthCm": 60
+      },
+      "palletization": {
+        "unitsPerPallet": 1120,
+        "cartonsPerPallet": 28,
+        "layersPerPallet": 7,
+        "cartonsPerLayer": 4,
+        "unitsPerLayer": 160,
+        "heightCm": 185,
+        "widthCm": 80,
+        "lengthCm": 120,
+        "palletType": "Paleta Jednorazowa"
+      },
+      "source": "MASTERDATA",
+      "weightSource": "MASTERDATA",
+      "weightKnown": true
+    },
+    {
+      "code": "GROUP_KAWA",
+      "name": "Kawa Headshot",
+      "unit": {
+        "netWeightKg": 0.15,
+        "grossWeightKg": 0.192,
+        "heightCm": 14.2,
+        "widthCm": 7,
+        "depthCm": 14.2
+      },
+      "carton": {
+        "units": 12,
+        "grossWeightKg": 2.5,
+        "heightCm": 16,
+        "widthCm": 32.5,
+        "lengthCm": 22
+      },
+      "palletization": {
+        "unitsPerPallet": 1080,
+        "cartonsPerPallet": 90,
+        "layersPerPallet": 9,
+        "cartonsPerLayer": 10,
+        "unitsPerLayer": 120,
+        "heightCm": 173,
+        "widthCm": 80,
+        "lengthCm": 120,
+        "palletType": "Paleta Jednorazowa"
+      },
+      "source": "MASTERDATA",
+      "weightSource": "MASTERDATA",
+      "weightKnown": true
+    }
+  ]
+}
