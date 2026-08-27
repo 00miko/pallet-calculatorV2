@@ -14,7 +14,7 @@
   "products": [
     {
       "code": "LEGACY_CAN500",
-      "name": "Energetyk 500 ml",
+      "name": "Puszka 500 ml",
       "source": "V4 fallback",
       "unit": {},
       "carton": {
@@ -40,7 +40,7 @@
     },
     {
       "code": "LEGACY_CAN330",
-      "name": "Energetyk 330 ml",
+      "name": "Puszka 330 ml",
       "source": "V4 fallback",
       "unit": {},
       "carton": {
