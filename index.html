@@ -96,7 +96,7 @@ body{padding-bottom:80px}.shell{padding:7px}.app{border-radius:14px}.header{grid
 <div class="switchrow">
 <input id="weightLimit" type="checkbox">
 <div>
-<div class="switchtitle">Zamówienie kluczowego klienta — limit 800 kg / paleta</div>
+<div class="switchtitle">Zamówienie kluczowego klienta — limit 900 kg / paleta</div>
 <div class="switchdesc">Po zaznaczeniu kalkulator uwzględnia wagę brutto kartonów z MASTERDATA. Jeśli dla któregoś produktu nie mamy jeszcze oficjalnej wagi, pojawi się ostrzeżenie.</div>
 </div>
 </div>
@@ -274,7 +274,7 @@ function calc(){
      reason.push("UWAGA: brak wagi dla "+unknownWeight.length+" typów produktu");
    }
  }else{
-   reason.push("limit 800 kg: wyłączony");
+   reason.push("limit 900 kg: wyłączony");
  }
  document.getElementById("reason").textContent=reason.join(" • ");
  document.getElementById("details").innerHTML=rows.length?rows.join(""):"Brak danych.";
