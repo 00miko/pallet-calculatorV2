@@ -1,9 +1,15 @@
 {
-  "schemaVersion": 3,
+  "schemaVersion": 4,
   "source": "MASTERDATA grouped for Pallet Calculator V5 + temporary beverage/wafer data",
   "settings": {
     "keyCustomerWeightLimitKg": 900,
-    "weightLimitDefaultEnabled": false
+    "weightLimitDefaultEnabled": false,
+    "halfPallet": {
+      "widthCm": 60,
+      "lengthCm": 80,
+      "heightCm": 14.4,
+      "dynamicWeightLimitKg": 500
+    }
   },
   "products": [
     {
@@ -224,22 +230,22 @@
     },
     {
       "code": "LEGACY_WAFERS_SPECIAL",
-      "name": "Wafle Zielona Cebulka / Texas BBQ",
+      "name": "Czipsy Zielona Cebulka / Texas BBQ",
       "source": "V4 fallback",
       "unit": {},
       "carton": {
-        "units": 12,
-        "grossWeightKg": 1.8,
+        "units": 6,
+        "grossWeightKg": 0.5,
         "heightCm": 20,
         "widthCm": null,
         "lengthCm": null
       },
       "palletization": {
-        "unitsPerPallet": 960,
+        "unitsPerPallet": 480,
         "cartonsPerPallet": 80,
         "layersPerPallet": 10,
         "cartonsPerLayer": 8,
-        "unitsPerLayer": 96,
+        "unitsPerLayer": 48,
         "heightCm": 214.4,
         "widthCm": 80,
         "lengthCm": 120,
@@ -379,7 +385,7 @@
     },
     {
       "code": "GROUP_BIALKO",
-      "name": "Białko",
+      "name": "Białko / Odżywka białkowa",
       "unit": {
         "netWeightKg": 0.704,
         "grossWeightKg": 0.825,
@@ -600,6 +606,32 @@
       "source": "MASTERDATA",
       "weightSource": "MASTERDATA",
       "weightKnown": true
+    },
+    {
+      "code": "LEGACY_BATONY",
+      "name": "Batony",
+      "source": "V4 fallback",
+      "carton": {
+        "units": 24,
+        "grossWeightKg": 2.05,
+        "heightCm": 8,
+        "widthCm": 19,
+        "lengthCm": 28
+      },
+      "palletization": {
+        "unitsPerPallet": 3072,
+        "cartonsPerPallet": 128,
+        "layersPerPallet": 8,
+        "cartonsPerLayer": 16,
+        "unitsPerLayer": 384,
+        "heightCm": 180,
+        "widthCm": 80,
+        "lengthCm": 120,
+        "palletType": "EUR"
+      },
+      "weightKnown": true,
+      "weightSource": "estimated",
+      "fixed": false
     }
   ]
 }
