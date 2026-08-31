@@ -96,8 +96,15 @@ body{padding-bottom:80px}.shell{padding:7px}.app{border-radius:14px}.header{grid
 <div class="switchrow">
 <input id="weightLimit" type="checkbox">
 <div>
-<div class="switchtitle">Zamówienie kluczowego klienta — limit 900 kg / paleta</div>
-<div class="switchdesc">Po zaznaczeniu kalkulator uwzględnia wagę brutto kartonów z MASTERDATA. Jeśli dla któregoś produktu nie mamy jeszcze oficjalnej wagi, pojawi się ostrzeżenie.</div>
+<div class="switchtitle" id="weightLimitTitle">Zamówienie kluczowego klienta — limit 900 kg / paleta</div>
+<div class="switchdesc">Po zaznaczeniu kalkulator uwzględnia limit wagi brutto. Dla półpalety obowiązuje jej niższy limit transportowy 500 kg.</div>
+</div>
+</div>
+<div class="switchrow" style="margin-top:12px;padding-top:12px;border-top:1px solid #ececef">
+<input id="halfPallet" type="checkbox">
+<div>
+<div class="switchtitle">Oblicz dla półpalet EUR-6 — 80 × 60 cm</div>
+<div class="switchdesc">Po zaznaczeniu cały wynik jest liczony jako liczba półpalet. Maksymalna wysokość pozostaje 180 cm, a limit dynamiczny półpalety wynosi 500 kg.</div>
 </div>
 </div>
 </div>
@@ -118,7 +125,7 @@ body{padding-bottom:80px}.shell{padding:7px}.app{border-radius:14px}.header{grid
 <div class="sidetitle">Przeliczenie zamówienia</div>
 <div id="details">Brak danych.</div>
 <div class="clearwrap"><button class="clear" id="clear" type="button">Wyczyść wszystkie pola</button></div>
-<div class="note">V5 korzysta z oficjalnego MASTERDATA tam, gdzie dane są dostępne. Energetyki, pozostałe napoje i wafle pozostają tymczasowo na danych V4.</div>
+<div class="note">V5.1 korzysta z MASTERDATA i danych magazynowych. Tryb półpalety EUR-6 przelicza powierzchnię na 80 × 60 cm i stosuje limit dynamiczny 500 kg.</div>
 </div>
 </aside>
 </main>
@@ -146,16 +153,42 @@ function parseExpr(s){
  }
  return{ok:true,total:total};
 }
-function palletWord(n){
- if(n===1)return"PALETA";
+function loadWord(n,half){
  var l=n%10,t=n%100;
+ if(half){
+   if(n===1)return"PÓŁPALETA";
+   if(l>=2&&l<=4&&!(t>=12&&t<=14))return"PÓŁPALETY";
+   return"PÓŁPALET";
+ }
+ if(n===1)return"PALETA";
  if(l>=2&&l<=4&&!(t>=12&&t<=14))return"PALETY";
  return"PALET";
+}
+
+function cartonsPerLayerFor(p,half){
+ if(!half)return p.palletization.cartonsPerLayer;
+
+ var W=60,L=80; // EUR-6 footprint in cm
+ var bw=Number(p.carton.widthCm), bl=Number(p.carton.lengthCm);
+
+ // For products with known carton footprint, calculate the best simple grid
+ // in either orientation. No overhang.
+ if(bw>0 && bl>0){
+   var a=Math.floor(W/bw)*Math.floor(L/bl);
+   var b=Math.floor(W/bl)*Math.floor(L/bw);
+   var fit=Math.max(a,b);
+   if(fit>0)return fit;
+ }
+
+ // Legacy drinks have no carton footprint recorded.
+ // EUR-6 has exactly half the surface area of EUR, so use half the
+ // known full-pallet cartons-per-layer as the fallback.
+ return Math.max(1,Math.floor(p.palletization.cartonsPerLayer/2));
 }
 function rowHtml(prod,id,removable){
  var source=prod.source==="MASTERDATA"?"MASTERDATA":"V4";
  return '<div class="card" id="wrap_'+id+'">'+
- '<div class="card-head"><div><div class="name">'+prod.name+'</div><div class="meta-small">'+prod.carton.units+' szt./opak. • '+prod.palletization.cartonsPerLayer+' opak./warstwę'+((prod.weightKnown!==false && prod.carton.grossWeightKg!=null)?' • '+prod.carton.grossWeightKg.toFixed(2)+' kg/opak.':'')+'</div></div>'+
+ '<div class="card-head"><div><div class="name">'+prod.name+'</div><div class="meta-small">'+prod.carton.units+' szt./opak. • '+prod.palletization.cartonsPerLayer+' opak./warstwę EUR'+((prod.weightKnown!==false && prod.carton.grossWeightKg!=null)?' • '+prod.carton.grossWeightKg.toFixed(2)+' kg/opak.':'')+'</div></div>'+
  '<div>'+(removable?'<button class="remove" data-remove="'+id+'">Usuń</button>':'<span class="tag">'+source+'</span>')+'</div></div>'+
  '<div class="inputrow"><input id="'+id+'" inputmode="numeric" pattern="[0-9+]*" autocomplete="off" placeholder="0">'+
  '<button class="plus" data-plus="'+id+'" type="button">+</button><span class="unit">szt.</span></div>'+
@@ -224,15 +257,18 @@ function entries(){
 }
 function calc(){
  var list=entries(),spaceDemand=0,totalWeight=0,unknownWeight=[],rows=[],bad=false;
+ var half=document.getElementById("halfPallet").checked;
+
  list.forEach(function(x){
    var e=document.getElementById(x.id),r=parseExpr(e.value),p=x.p;
    if(!r.ok){bad=true;e.style.borderColor="#e30613";return;}
    if(!r.total)return;
-   var cartons=Math.ceil(r.total/p.carton.units);
 
-   // Space proxy: fraction of a full layer * carton height.
-   // This keeps compatibility with the V4 mixed-layer approximation while using official cartons/layer.
-   spaceDemand += cartons*(1/p.palletization.cartonsPerLayer)*p.carton.heightCm;
+   var cartons=Math.ceil(r.total/p.carton.units);
+   var cpl=cartonsPerLayerFor(p,half);
+
+   // Mixed-layer height proxy, now using the selected pallet footprint.
+   spaceDemand += cartons*(1/cpl)*p.carton.heightCm;
 
    if(p.weightKnown!==false && p.carton.grossWeightKg!=null){
      totalWeight += cartons*p.carton.grossWeightKg;
@@ -241,6 +277,7 @@ function calc(){
    }
 
    rows.push('<div class="drow"><strong>'+p.name+'</strong><br>'+r.total+' szt. → '+cartons+' opak.'+
+     ' • '+cpl+' opak./warstwę '+(half?'półpalety':'EUR')+
      ((p.weightKnown!==false && p.carton.grossWeightKg!=null)?' • '+(cartons*p.carton.grossWeightKg).toFixed(1)+' kg':' • <span class="warn">brak danych wagowych</span>')+
      '</div>');
  });
@@ -256,26 +293,34 @@ function calc(){
  var height=DB.settings.usableGoodsHeightCm||160;
  var spacePallets=spaceDemand?Math.ceil(spaceDemand/(surface*height)):0;
 
- var useWeight=document.getElementById("weightLimit").checked;
+ var useKeyWeight=document.getElementById("weightLimit").checked;
+ var fullLimit=DB.settings.keyCustomerWeightLimitKg||900;
+ var halfLimit=(DB.settings.halfPallet&&DB.settings.halfPallet.dynamicWeightLimitKg)||500;
+
+ // Half pallets always respect their 500 kg physical transport limit.
+ // Full EUR pallets apply weight only for key-customer orders.
+ var activeWeightLimit=half?halfLimit:(useKeyWeight?fullLimit:null);
  var weightPallets=0;
- if(useWeight && totalWeight>0){
-   weightPallets=Math.ceil(totalWeight/(DB.settings.keyCustomerWeightLimitKg||800));
+ if(activeWeightLimit && totalWeight>0){
+   weightPallets=Math.ceil(totalWeight/activeWeightLimit);
  }
 
  var result=Math.max(spacePallets,weightPallets);
  document.getElementById("number").textContent=String(result);
- document.getElementById("word").textContent=palletWord(result);
+ document.getElementById("word").textContent=loadWord(result,half);
 
  var reason=[];
- reason.push("Przestrzeń: min. "+spacePallets+" "+palletWord(spacePallets).toLowerCase());
- if(useWeight){
-   reason.push("znana waga: "+totalWeight.toFixed(1)+" kg → min. "+weightPallets+" "+palletWord(weightPallets).toLowerCase());
+ reason.push("Przestrzeń: min. "+spacePallets+" "+loadWord(spacePallets,half).toLowerCase());
+
+ if(activeWeightLimit){
+   reason.push("waga: "+totalWeight.toFixed(1)+" kg → min. "+weightPallets+" "+loadWord(weightPallets,half).toLowerCase()+" (limit "+activeWeightLimit+" kg)");
    if(unknownWeight.length){
      reason.push("UWAGA: brak wagi dla "+unknownWeight.length+" typów produktu");
    }
  }else{
    reason.push("limit 900 kg: wyłączony");
  }
+
  document.getElementById("reason").textContent=reason.join(" • ");
  document.getElementById("details").innerHTML=rows.length?rows.join(""):"Brak danych.";
 
@@ -286,6 +331,7 @@ function clearAll(){
  FIXED.forEach(function(k){var e=document.getElementById("f_"+k);if(e)e.value="";});
  dynamicRows=[];document.getElementById("dynamic").innerHTML="";
  document.getElementById("weightLimit").checked=false;
+ document.getElementById("halfPallet").checked=false;
  document.getElementById("number").textContent="—";
  document.getElementById("word").textContent="PALET";
  document.getElementById("reason").textContent='Wpisz produkty i kliknij „Oblicz palety”.';
@@ -293,6 +339,9 @@ function clearAll(){
 }
 function init(db){
  DB=db;
+ var fullLimit=(db.settings&&db.settings.keyCustomerWeightLimitKg)||900;
+ var halfLimit=(db.settings&&db.settings.halfPallet&&db.settings.halfPallet.dynamicWeightLimitKg)||500;
+ document.getElementById("weightLimitTitle").textContent="Zamówienie kluczowego klienta — limit "+fullLimit+" kg / paleta";
  db.products.forEach(function(p){BY_ID[p.code]=p;});
  renderFixed();fillSelector();
  document.getElementById("add").addEventListener("click",addProduct);
@@ -300,7 +349,7 @@ function init(db){
  document.getElementById("mobileCalc").addEventListener("click",calc);
  document.getElementById("clear").addEventListener("click",clearAll);
 }
-fetch("products.json?v=5")
+fetch("products.json?v=5.1")
  .then(function(r){if(!r.ok)throw new Error("HTTP "+r.status);return r.json();})
  .then(init)
  .catch(function(err){
