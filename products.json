@@ -1,20 +1,25 @@
 {
-  "schemaVersion": 4,
-  "source": "MASTERDATA grouped for Pallet Calculator V5 + temporary beverage/wafer data",
+  "version": "6.0",
   "settings": {
+    "fullPallet": {
+      "widthCm": 80,
+      "lengthCm": 120,
+      "heightCm": 14.4,
+      "maxTotalHeightCm": 180
+    },
     "keyCustomerWeightLimitKg": 900,
-    "weightLimitDefaultEnabled": false,
     "halfPallet": {
       "widthCm": 60,
       "lengthCm": 80,
       "heightCm": 14.4,
-      "dynamicWeightLimitKg": 500
+      "maxTotalHeightCm": 140,
+      "dynamicWeightLimitKg": 200
     }
   },
   "products": [
     {
       "code": "LEGACY_CAN500",
-      "name": "Puszka 500 ml",
+      "name": "Puszka 500ml",
       "source": "V4 fallback",
       "unit": {},
       "carton": {
@@ -37,11 +42,12 @@
       },
       "weightKnown": true,
       "fixed": true,
-      "weightSource": "estimated"
+      "weightSource": "estimated",
+      "packageType": "zgrzewka"
     },
     {
       "code": "LEGACY_CAN330",
-      "name": "Puszka 330 ml",
+      "name": "Puszka 330ml",
       "source": "V4 fallback",
       "unit": {},
       "carton": {
@@ -64,11 +70,12 @@
       },
       "weightKnown": true,
       "fixed": true,
-      "weightSource": "estimated"
+      "weightSource": "estimated",
+      "packageType": "zgrzewka"
     },
     {
       "code": "LEGACY_PET15",
-      "name": "PET 1.5 L",
+      "name": "PET 1,5L",
       "source": "V4 fallback",
       "unit": {},
       "carton": {
@@ -91,11 +98,12 @@
       },
       "weightKnown": true,
       "fixed": true,
-      "weightSource": "estimated"
+      "weightSource": "estimated",
+      "packageType": "zgrzewka"
     },
     {
       "code": "LEGACY_PET085",
-      "name": "PET 0.85 L",
+      "name": "PET 0,85L",
       "source": "V4 fallback",
       "unit": {},
       "carton": {
@@ -118,7 +126,8 @@
       },
       "weightKnown": true,
       "fixed": true,
-      "weightSource": "estimated"
+      "weightSource": "estimated",
+      "packageType": "zgrzewka"
     },
     {
       "code": "LEGACY_ISO750",
@@ -145,7 +154,8 @@
       },
       "weightKnown": true,
       "fixed": false,
-      "weightSource": "estimated"
+      "weightSource": "estimated",
+      "packageType": "zgrzewka"
     },
     {
       "code": "LEGACY_WATER500",
@@ -172,51 +182,77 @@
       },
       "weightKnown": true,
       "fixed": false,
-      "weightSource": "estimated"
+      "weightSource": "estimated",
+      "packageType": "zgrzewka"
     },
     {
-      "code": "LEGACY_WAFERS_CHOCOLATE",
+      "code": "WAFLE_CZEKOLADOWE",
       "name": "Wafle czekoladowe",
-      "source": "V4 fallback",
-      "unit": {},
+      "source": "warehouse",
+      "packageType": "pudełko",
       "carton": {
         "units": 12,
         "grossWeightKg": 2.4,
-        "heightCm": 20,
-        "widthCm": null,
-        "lengthCm": null
+        "heightCm": 22,
+        "widthCm": 29,
+        "lengthCm": 37
       },
       "palletization": {
-        "unitsPerPallet": 768,
-        "cartonsPerPallet": 64,
-        "layersPerPallet": 8,
+        "unitsPerPallet": 672,
+        "cartonsPerPallet": 56,
+        "layersPerPallet": 7,
         "cartonsPerLayer": 8,
         "unitsPerLayer": 96,
-        "heightCm": 174.4,
+        "heightCm": 168.4,
         "widthCm": 80,
         "lengthCm": 120,
         "palletType": "EUR"
       },
       "weightKnown": true,
-      "fixed": false,
       "weightSource": "estimated"
     },
     {
-      "code": "LEGACY_WAFERS_CHEESE",
+      "code": "WAFLE_SEROWE",
       "name": "Wafle serowe",
-      "source": "V4 fallback",
-      "unit": {},
+      "source": "warehouse",
+      "packageType": "pudełko",
       "carton": {
         "units": 12,
         "grossWeightKg": 1.8,
-        "heightCm": 20,
-        "widthCm": null,
-        "lengthCm": null
+        "heightCm": 22,
+        "widthCm": 29,
+        "lengthCm": 37
       },
       "palletization": {
-        "unitsPerPallet": 768,
-        "cartonsPerPallet": 64,
-        "layersPerPallet": 8,
+        "unitsPerPallet": 672,
+        "cartonsPerPallet": 56,
+        "layersPerPallet": 7,
+        "cartonsPerLayer": 8,
+        "unitsPerLayer": 96,
+        "heightCm": 168.4,
+        "widthCm": 80,
+        "lengthCm": 120,
+        "palletType": "EUR"
+      },
+      "weightKnown": true,
+      "weightSource": "estimated"
+    },
+    {
+      "code": "WAFLE_CEBULKA",
+      "name": "Wafle Zielona Cebulka",
+      "source": "warehouse",
+      "packageType": "pudełko",
+      "carton": {
+        "units": 12,
+        "grossWeightKg": 1.8,
+        "heightCm": 16,
+        "widthCm": 28,
+        "lengthCm": 37
+      },
+      "palletization": {
+        "unitsPerPallet": 960,
+        "cartonsPerPallet": 80,
+        "layersPerPallet": 10,
         "cartonsPerLayer": 8,
         "unitsPerLayer": 96,
         "heightCm": 174.4,
@@ -225,35 +261,86 @@
         "palletType": "EUR"
       },
       "weightKnown": true,
-      "fixed": false,
       "weightSource": "estimated"
     },
     {
-      "code": "LEGACY_WAFERS_SPECIAL",
-      "name": "Czipsy Zielona Cebulka / Texas BBQ",
-      "source": "V4 fallback",
-      "unit": {},
+      "code": "WAFLE_TEXAS",
+      "name": "Wafle Texas BBQ",
+      "source": "warehouse",
+      "packageType": "pudełko",
+      "carton": {
+        "units": 12,
+        "grossWeightKg": 1.8,
+        "heightCm": 16,
+        "widthCm": 28,
+        "lengthCm": 37
+      },
+      "palletization": {
+        "unitsPerPallet": 960,
+        "cartonsPerPallet": 80,
+        "layersPerPallet": 10,
+        "cartonsPerLayer": 8,
+        "unitsPerLayer": 96,
+        "heightCm": 174.4,
+        "widthCm": 80,
+        "lengthCm": 120,
+        "palletType": "EUR"
+      },
+      "weightKnown": true,
+      "weightSource": "estimated"
+    },
+    {
+      "code": "CZIPSY",
+      "name": "Czipsy",
+      "source": "warehouse",
+      "packageType": "pudełko",
       "carton": {
         "units": 6,
         "grossWeightKg": 0.5,
         "heightCm": 20,
-        "widthCm": null,
-        "lengthCm": null
+        "widthCm": 16.5,
+        "lengthCm": 34.5
       },
       "palletization": {
-        "unitsPerPallet": 480,
-        "cartonsPerPallet": 80,
-        "layersPerPallet": 10,
-        "cartonsPerLayer": 8,
-        "unitsPerLayer": 48,
-        "heightCm": 214.4,
+        "unitsPerPallet": 672,
+        "cartonsPerPallet": 112,
+        "layersPerPallet": 8,
+        "cartonsPerLayer": 14,
+        "unitsPerLayer": 84,
+        "heightCm": 174.4,
         "widthCm": 80,
         "lengthCm": 120,
         "palletType": "EUR"
       },
       "weightKnown": true,
-      "fixed": false,
       "weightSource": "estimated"
+    },
+    {
+      "code": "LEGACY_BATONY",
+      "name": "Batony",
+      "source": "V4 fallback",
+      "carton": {
+        "units": 24,
+        "grossWeightKg": 2.03,
+        "heightCm": 8,
+        "widthCm": 19,
+        "lengthCm": 28
+      },
+      "palletization": {
+        "unitsPerPallet": 3072,
+        "cartonsPerPallet": 128,
+        "layersPerPallet": 8,
+        "cartonsPerLayer": 16,
+        "unitsPerLayer": 384,
+        "heightCm": 180,
+        "widthCm": 80,
+        "lengthCm": 120,
+        "palletType": "EUR"
+      },
+      "weightKnown": true,
+      "weightSource": "estimated",
+      "fixed": false,
+      "packageType": "pudełko"
     },
     {
       "code": "GROUP_KREATYNA",
@@ -285,7 +372,8 @@
       },
       "source": "MASTERDATA — grupa SKU",
       "weightSource": "MASTERDATA",
-      "weightKnown": true
+      "weightKnown": true,
+      "packageType": "karton"
     },
     {
       "code": "GROUP_CYTRULINA",
@@ -317,11 +405,12 @@
       },
       "source": "MASTERDATA — grupa SKU",
       "weightSource": "MASTERDATA",
-      "weightKnown": true
+      "weightKnown": true,
+      "packageType": "karton"
     },
     {
       "code": "GROUP_BOMBA",
-      "name": "Bomba / Przedtreningówka",
+      "name": "Bomba",
       "unit": {
         "netWeightKg": 0.3,
         "grossWeightKg": 0.358,
@@ -349,167 +438,164 @@
       },
       "source": "MASTERDATA — grupa SKU",
       "weightSource": "MASTERDATA",
-      "weightKnown": true
+      "weightKnown": true,
+      "packageType": "karton"
     },
     {
-      "code": "GROUP_GEL",
-      "name": "Gel energetyczny",
-      "unit": {
-        "netWeightKg": 0.066,
-        "grossWeightKg": 0.069,
-        "heightCm": 17.9,
-        "widthCm": 0.5,
-        "depthCm": 17.9
-      },
+      "code": "VIT_MULTIWITAMINA",
+      "name": "Multiwitamina",
+      "source": "MASTERDATA + warehouse correction",
+      "packageType": "karton",
       "carton": {
-        "units": 72,
-        "grossWeightKg": 5.452,
-        "heightCm": 20,
-        "widthCm": 29,
-        "lengthCm": 37
-      },
-      "palletization": {
-        "unitsPerPallet": 3456,
-        "cartonsPerPallet": 48,
-        "layersPerPallet": 8,
-        "cartonsPerLayer": 8,
-        "unitsPerLayer": 576,
-        "heightCm": 140,
-        "widthCm": 80,
-        "lengthCm": 120,
-        "palletType": "Paleta Jednorazowa"
-      },
-      "source": "MASTERDATA — grupa SKU",
-      "weightSource": "MASTERDATA",
-      "weightKnown": true
-    },
-    {
-      "code": "GROUP_BIALKO",
-      "name": "Białko / Odżywka białkowa",
-      "unit": {
-        "netWeightKg": 0.704,
-        "grossWeightKg": 0.825,
-        "heightCm": 21.8,
-        "widthCm": 12,
-        "depthCm": 21.8
-      },
-      "carton": {
-        "units": 9,
-        "grossWeightKg": 8,
+        "units": 90,
+        "grossWeightKg": 13.72,
         "heightCm": 23,
-        "widthCm": 36.5,
-        "lengthCm": 40
+        "widthCm": 40,
+        "lengthCm": 60
       },
       "palletization": {
-        "unitsPerPallet": 432,
-        "cartonsPerPallet": 48,
-        "layersPerPallet": 8,
-        "cartonsPerLayer": 6,
-        "unitsPerLayer": 54,
-        "heightCm": 195,
+        "unitsPerPallet": 2520,
+        "cartonsPerPallet": 28,
+        "layersPerPallet": 7,
+        "cartonsPerLayer": 4,
+        "unitsPerLayer": 360,
+        "heightCm": 175.4,
         "widthCm": 80,
         "lengthCm": 120,
-        "palletType": "Paleta Jednorazowa"
+        "palletType": "EUR"
       },
-      "source": "MASTERDATA — grupa SKU",
-      "weightSource": "MASTERDATA",
-      "weightKnown": true
+      "weightKnown": true,
+      "weightSource": "MASTERDATA"
     },
     {
-      "code": "GROUP_SOS_SLODKI",
-      "name": "Sosy słodkie",
-      "unit": {
-        "netWeightKg": 0.425,
-        "grossWeightKg": 0.478,
-        "heightCm": 16.5,
-        "widthCm": 9.1,
-        "depthCm": 16.5
-      },
+      "code": "VIT_DOBRY_SEN",
+      "name": "Dobry Sen",
+      "source": "MASTERDATA + warehouse correction",
+      "packageType": "karton",
       "carton": {
-        "units": 6,
-        "grossWeightKg": 2.97,
-        "heightCm": 17.5,
-        "widthCm": 18.5,
-        "lengthCm": 18.5
-      },
-      "palletization": {
-        "unitsPerPallet": 864,
-        "cartonsPerPallet": 144,
-        "layersPerPallet": 6,
-        "cartonsPerLayer": 24,
-        "unitsPerLayer": 144,
-        "heightCm": 175,
-        "widthCm": 74,
-        "lengthCm": 111,
-        "palletType": "Paleta Jednorazowa"
-      },
-      "source": "MASTERDATA — grupa SKU",
-      "weightSource": "MASTERDATA",
-      "weightKnown": true
-    },
-    {
-      "code": "GROUP_WITAMINY_120",
-      "name": "Witaminy (120 szt./karton)",
-      "unit": {
-        "netWeightKg": 0.081,
-        "grossWeightKg": 0.108,
-        "heightCm": 11.4,
-        "widthCm": 5.8,
-        "depthCm": 11.4
-      },
-      "carton": {
-        "units": 120,
+        "units": 90,
         "grossWeightKg": 14.56,
         "heightCm": 23,
         "widthCm": 40,
         "lengthCm": 60
       },
       "palletization": {
-        "unitsPerPallet": 3360,
+        "unitsPerPallet": 2520,
         "cartonsPerPallet": 28,
         "layersPerPallet": 7,
         "cartonsPerLayer": 4,
-        "unitsPerLayer": 480,
-        "heightCm": 180,
+        "unitsPerLayer": 360,
+        "heightCm": 175.4,
         "widthCm": 80,
         "lengthCm": 120,
-        "palletType": "Paleta Jednorazowa"
+        "palletType": "EUR"
       },
-      "source": "MASTERDATA — grupa SKU; waga konserwatywna (najcięższy karton)",
-      "weightSource": "MASTERDATA-max",
-      "weightKnown": true
+      "weightKnown": true,
+      "weightSource": "MASTERDATA"
     },
     {
-      "code": "GROUP_MAGNEZ",
-      "name": "Magnez+B6",
-      "unit": {
-        "netWeightKg": 0.102,
-        "grossWeightKg": 0.12,
-        "heightCm": 11.7,
-        "widthCm": 6.4,
-        "depthCm": 11.7
-      },
+      "code": "VIT_CYNK",
+      "name": "Cynk",
+      "source": "MASTERDATA + warehouse correction",
+      "packageType": "karton",
       "carton": {
-        "units": 108,
+        "units": 90,
+        "grossWeightKg": 5.544,
+        "heightCm": 23,
+        "widthCm": 40,
+        "lengthCm": 60
+      },
+      "palletization": {
+        "unitsPerPallet": 2520,
+        "cartonsPerPallet": 28,
+        "layersPerPallet": 7,
+        "cartonsPerLayer": 4,
+        "unitsPerLayer": 360,
+        "heightCm": 175.4,
+        "widthCm": 80,
+        "lengthCm": 120,
+        "palletType": "EUR"
+      },
+      "weightKnown": true,
+      "weightSource": "MASTERDATA"
+    },
+    {
+      "code": "VIT_D3_K2",
+      "name": "D3-K2",
+      "source": "MASTERDATA + warehouse correction",
+      "packageType": "karton",
+      "carton": {
+        "units": 90,
+        "grossWeightKg": 6.12,
+        "heightCm": 23,
+        "widthCm": 40,
+        "lengthCm": 60
+      },
+      "palletization": {
+        "unitsPerPallet": 2520,
+        "cartonsPerPallet": 28,
+        "layersPerPallet": 7,
+        "cartonsPerLayer": 4,
+        "unitsPerLayer": 360,
+        "heightCm": 175.4,
+        "widthCm": 80,
+        "lengthCm": 120,
+        "palletType": "EUR"
+      },
+      "weightKnown": true,
+      "weightSource": "MASTERDATA"
+    },
+    {
+      "code": "VIT_WITAMINA_C",
+      "name": "Witamina C",
+      "source": "MASTERDATA + warehouse correction",
+      "packageType": "karton",
+      "carton": {
+        "units": 90,
+        "grossWeightKg": 11.04,
+        "heightCm": 23,
+        "widthCm": 40,
+        "lengthCm": 60
+      },
+      "palletization": {
+        "unitsPerPallet": 2520,
+        "cartonsPerPallet": 28,
+        "layersPerPallet": 7,
+        "cartonsPerLayer": 4,
+        "unitsPerLayer": 360,
+        "heightCm": 175.4,
+        "widthCm": 80,
+        "lengthCm": 120,
+        "palletType": "EUR"
+      },
+      "weightKnown": true,
+      "weightSource": "MASTERDATA"
+    },
+    {
+      "code": "VIT_MAGNEZ_B6",
+      "name": "Magnez+B6",
+      "source": "MASTERDATA + warehouse correction",
+      "packageType": "karton",
+      "carton": {
+        "units": 90,
         "grossWeightKg": 12.96,
         "heightCm": 23,
         "widthCm": 40,
         "lengthCm": 60
       },
       "palletization": {
-        "unitsPerPallet": 3024,
+        "unitsPerPallet": 2520,
         "cartonsPerPallet": 28,
         "layersPerPallet": 7,
         "cartonsPerLayer": 4,
-        "unitsPerLayer": 120,
-        "heightCm": 180,
+        "unitsPerLayer": 360,
+        "heightCm": 175.4,
         "widthCm": 80,
         "lengthCm": 120,
-        "palletType": "Paleta Jednorazowa"
+        "palletType": "EUR"
       },
-      "source": "MASTERDATA",
-      "weightSource": "MASTERDATA",
-      "weightKnown": true
+      "weightKnown": true,
+      "weightSource": "MASTERDATA"
     },
     {
       "code": "GROUP_BOMBA_SHOT",
@@ -541,7 +627,74 @@
       },
       "source": "MASTERDATA",
       "weightSource": "MASTERDATA",
-      "weightKnown": true
+      "weightKnown": true,
+      "packageType": "pudełko"
+    },
+    {
+      "code": "GROUP_GEL",
+      "name": "Żel",
+      "unit": {
+        "netWeightKg": 0.066,
+        "grossWeightKg": 0.069,
+        "heightCm": 17.9,
+        "widthCm": 0.5,
+        "depthCm": 17.9
+      },
+      "carton": {
+        "units": 72,
+        "grossWeightKg": 5.452,
+        "heightCm": 20,
+        "widthCm": 29,
+        "lengthCm": 37
+      },
+      "palletization": {
+        "unitsPerPallet": 3456,
+        "cartonsPerPallet": 48,
+        "layersPerPallet": 8,
+        "cartonsPerLayer": 8,
+        "unitsPerLayer": 576,
+        "heightCm": 140,
+        "widthCm": 80,
+        "lengthCm": 120,
+        "palletType": "Paleta Jednorazowa"
+      },
+      "source": "MASTERDATA — grupa SKU",
+      "weightSource": "MASTERDATA",
+      "weightKnown": true,
+      "packageType": "karton"
+    },
+    {
+      "code": "GROUP_BIALKO",
+      "name": "Białko",
+      "unit": {
+        "netWeightKg": 0.704,
+        "grossWeightKg": 0.825,
+        "heightCm": 21.8,
+        "widthCm": 12,
+        "depthCm": 21.8
+      },
+      "carton": {
+        "units": 9,
+        "grossWeightKg": 8,
+        "heightCm": 23,
+        "widthCm": 36.5,
+        "lengthCm": 40
+      },
+      "palletization": {
+        "unitsPerPallet": 288,
+        "cartonsPerPallet": 32,
+        "layersPerPallet": 8,
+        "cartonsPerLayer": 4,
+        "unitsPerLayer": 36,
+        "heightCm": 195,
+        "widthCm": 80,
+        "lengthCm": 120,
+        "palletType": "Paleta Jednorazowa"
+      },
+      "source": "warehouse",
+      "weightSource": "MASTERDATA",
+      "weightKnown": true,
+      "packageType": "karton"
     },
     {
       "code": "GROUP_LIMITLESS",
@@ -573,11 +726,71 @@
       },
       "source": "MASTERDATA",
       "weightSource": "MASTERDATA",
-      "weightKnown": true
+      "weightKnown": true,
+      "packageType": "karton"
+    },
+    {
+      "code": "GROUP_SOS_SLODKI",
+      "name": "Sosy słodkie",
+      "unit": {
+        "netWeightKg": 0.425,
+        "grossWeightKg": 0.478,
+        "heightCm": 16.5,
+        "widthCm": 9.1,
+        "depthCm": 16.5
+      },
+      "carton": {
+        "units": 6,
+        "grossWeightKg": 2.97,
+        "heightCm": 17.5,
+        "widthCm": 18.5,
+        "lengthCm": 18.5
+      },
+      "palletization": {
+        "unitsPerPallet": 864,
+        "cartonsPerPallet": 144,
+        "layersPerPallet": 6,
+        "cartonsPerLayer": 24,
+        "unitsPerLayer": 144,
+        "heightCm": 175,
+        "widthCm": 74,
+        "lengthCm": 111,
+        "palletType": "Paleta Jednorazowa"
+      },
+      "source": "MASTERDATA — grupa SKU",
+      "weightSource": "MASTERDATA",
+      "weightKnown": true,
+      "packageType": "karton"
+    },
+    {
+      "code": "SOSY_SLONE",
+      "name": "Sosy słone",
+      "source": "warehouse/V4",
+      "packageType": "karton",
+      "carton": {
+        "units": 12,
+        "grossWeightKg": null,
+        "heightCm": 18,
+        "widthCm": 24,
+        "lengthCm": 26
+      },
+      "palletization": {
+        "unitsPerPallet": 1620,
+        "cartonsPerPallet": 135,
+        "layersPerPallet": 9,
+        "cartonsPerLayer": 15,
+        "unitsPerLayer": 180,
+        "heightCm": 176.4,
+        "widthCm": 80,
+        "lengthCm": 120,
+        "palletType": "EUR"
+      },
+      "weightKnown": false,
+      "weightSource": "unknown"
     },
     {
       "code": "GROUP_KAWA",
-      "name": "Kawa Headshot",
+      "name": "Kawa",
       "unit": {
         "netWeightKg": 0.15,
         "grossWeightKg": 0.192,
@@ -605,33 +818,8 @@
       },
       "source": "MASTERDATA",
       "weightSource": "MASTERDATA",
-      "weightKnown": true
-    },
-    {
-      "code": "LEGACY_BATONY",
-      "name": "Batony",
-      "source": "V4 fallback",
-      "carton": {
-        "units": 24,
-        "grossWeightKg": 2.05,
-        "heightCm": 8,
-        "widthCm": 19,
-        "lengthCm": 28
-      },
-      "palletization": {
-        "unitsPerPallet": 3072,
-        "cartonsPerPallet": 128,
-        "layersPerPallet": 8,
-        "cartonsPerLayer": 16,
-        "unitsPerLayer": 384,
-        "heightCm": 180,
-        "widthCm": 80,
-        "lengthCm": 120,
-        "palletType": "EUR"
-      },
       "weightKnown": true,
-      "weightSource": "estimated",
-      "fixed": false
+      "packageType": "karton"
     }
   ]
 }
