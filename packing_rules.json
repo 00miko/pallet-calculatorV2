@@ -1,0 +1,175 @@
+{
+  "version": "0.1-test",
+  "parcelName": "Podwójna zgrzewka",
+  "capacityPoints": 12,
+  "products": [
+    {
+      "code": "CAN500",
+      "name": "Puszka 500ml",
+      "packSize": 24,
+      "packageLabel": "zgrzewka",
+      "pointsPerPack": 6,
+      "group": "heavy",
+      "topperSauce": false
+    },
+    {
+      "code": "CAN330",
+      "name": "Puszka 330ml",
+      "packSize": 24,
+      "packageLabel": "zgrzewka",
+      "pointsPerPack": 6,
+      "group": "heavy",
+      "topperSauce": true
+    },
+    {
+      "code": "ISO750",
+      "name": "Izotonik 750ml",
+      "packSize": 12,
+      "packageLabel": "zgrzewka",
+      "pointsPerPack": 6,
+      "group": "heavy"
+    },
+    {
+      "code": "WATER500",
+      "name": "Woda 500ml",
+      "packSize": 6,
+      "packageLabel": "zgrzewka",
+      "pointsPerPack": 1.5,
+      "group": "heavy"
+    },
+    {
+      "code": "PET15",
+      "name": "PET 1,5L",
+      "packSize": 6,
+      "packageLabel": "zgrzewka",
+      "pointsPerPack": 6,
+      "group": "heavy"
+    },
+    {
+      "code": "PET085",
+      "name": "PET 0,85L",
+      "packSize": 6,
+      "packageLabel": "zgrzewka",
+      "pointsPerPack": 3,
+      "group": "heavy"
+    },
+    {
+      "code": "WAFER",
+      "name": "Wafle",
+      "packSize": 12,
+      "packageLabel": "zgrzewka",
+      "pointsPerPack": 6,
+      "group": "fragile"
+    },
+    {
+      "code": "CHIPS",
+      "name": "Czipsy",
+      "packSize": 6,
+      "packageLabel": "zgrzewka",
+      "pointsPerPack": 6,
+      "group": "light"
+    },
+    {
+      "code": "CREATINE",
+      "name": "Kreatyna",
+      "packSize": 1,
+      "packageLabel": "szt.",
+      "pointsPerPack": 1,
+      "group": "small"
+    },
+    {
+      "code": "CITRULLINE",
+      "name": "Cytrulina",
+      "packSize": 1,
+      "packageLabel": "szt.",
+      "pointsPerPack": 1,
+      "group": "small"
+    },
+    {
+      "code": "PROTEIN",
+      "name": "Białko",
+      "packSize": 1,
+      "packageLabel": "szt.",
+      "pointsPerPack": 1.5,
+      "group": "small"
+    },
+    {
+      "code": "VITAMIN",
+      "name": "Witaminy",
+      "packSize": 1,
+      "packageLabel": "szt.",
+      "pointsPerPack": 0.5,
+      "group": "tiny"
+    },
+    {
+      "code": "GEL",
+      "name": "Żel",
+      "packSize": 1,
+      "packageLabel": "szt.",
+      "pointsPerPack": 0.5,
+      "group": "tiny"
+    },
+    {
+      "code": "SAUCE_SWEET",
+      "name": "Sos słodki",
+      "packSize": 1,
+      "packageLabel": "szt.",
+      "pointsPerPack": 0.5,
+      "group": "tiny_sauce"
+    },
+    {
+      "code": "SAUCE_SALTY",
+      "name": "Sos słony",
+      "packSize": 1,
+      "packageLabel": "szt.",
+      "pointsPerPack": 0.5,
+      "group": "tiny_sauce"
+    },
+    {
+      "code": "BAR",
+      "name": "Batony",
+      "packSize": 1,
+      "packageLabel": "szt.",
+      "pointsPerPack": 0.5,
+      "group": "tiny"
+    },
+    {
+      "code": "BOMBA",
+      "name": "Bomba",
+      "packSize": 1,
+      "packageLabel": "szt.",
+      "pointsPerPack": 1,
+      "group": "small"
+    },
+    {
+      "code": "BOMBA_SHOT",
+      "name": "Bomba Shot",
+      "packSize": 1,
+      "packageLabel": "szt.",
+      "pointsPerPack": 0.5,
+      "group": "tiny"
+    },
+    {
+      "code": "LIMITLESS",
+      "name": "Limitless",
+      "packSize": 1,
+      "packageLabel": "szt.",
+      "pointsPerPack": 1,
+      "group": "small"
+    },
+    {
+      "code": "COFFEE",
+      "name": "Kawa",
+      "packSize": 1,
+      "packageLabel": "szt.",
+      "pointsPerPack": 1,
+      "group": "small"
+    }
+  ],
+  "notes": [
+    "Wafle nie mogą jechać z napojami.",
+    "2 zgrzewki wafli praktycznie zamykają paczkę.",
+    "2 zgrzewki 330 ml lub miks 500+330 mogą przyjąć do 6 sosów na górze.",
+    "Reguły drobnicy są testowe."
+  ]
+}
