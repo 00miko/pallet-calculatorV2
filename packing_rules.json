@@ -1,175 +1,331 @@
 {
-  "version": "0.1-test",
+  "version": "0.2-test",
   "parcelName": "Podwójna zgrzewka",
   "capacityPoints": 12,
   "products": [
     {
       "code": "CAN500",
+      "category": "Napoje",
       "name": "Puszka 500ml",
       "packSize": 24,
       "packageLabel": "zgrzewka",
       "pointsPerPack": 6,
       "group": "heavy",
-      "topperSauce": false
+      "variants": [
+        "Arbuz",
+        "Lemon",
+        "Tropic",
+        "Peach",
+        "Klasyk",
+        "Kaktus",
+        "White",
+        "Mojito",
+        "Grape",
+        "Owoce leśne",
+        "Jabłko",
+        "Orange",
+        "Ananas",
+        "Cherry"
+      ],
+      "labelTemplate": "{variant} 500ml"
     },
     {
       "code": "CAN330",
+      "category": "Napoje",
       "name": "Puszka 330ml",
       "packSize": 24,
       "packageLabel": "zgrzewka",
       "pointsPerPack": 6,
       "group": "heavy",
-      "topperSauce": true
+      "variants": [
+        "Grape",
+        "Cherry",
+        "Ananas",
+        "Mojito",
+        "Lemon",
+        "Jabłko",
+        "White",
+        "Cola-Lemon",
+        "Orange"
+      ],
+      "labelTemplate": "{variant} 330ml"
     },
     {
       "code": "ISO750",
+      "category": "Napoje",
       "name": "Izotonik 750ml",
       "packSize": 12,
       "packageLabel": "zgrzewka",
       "pointsPerPack": 6,
-      "group": "heavy"
+      "group": "heavy",
+      "variants": [
+        "Niebieski",
+        "Biały",
+        "Czarny"
+      ],
+      "labelTemplate": "Izotonik {variant} 750ml"
     },
     {
       "code": "WATER500",
+      "category": "Napoje",
       "name": "Woda 500ml",
       "packSize": 6,
       "packageLabel": "zgrzewka",
       "pointsPerPack": 1.5,
-      "group": "heavy"
+      "group": "heavy",
+      "variants": [
+        "Lychee",
+        "Grape",
+        "Żurawina"
+      ],
+      "labelTemplate": "Woda {variant} 500ml"
     },
     {
       "code": "PET15",
+      "category": "Napoje",
       "name": "PET 1,5L",
       "packSize": 6,
       "packageLabel": "zgrzewka",
       "pointsPerPack": 6,
-      "group": "heavy"
+      "group": "heavy",
+      "variants": [
+        "Orange",
+        "Cola-Lemon"
+      ],
+      "labelTemplate": "PET {variant} 1,5L"
     },
     {
       "code": "PET085",
+      "category": "Napoje",
       "name": "PET 0,85L",
       "packSize": 6,
       "packageLabel": "zgrzewka",
       "pointsPerPack": 3,
-      "group": "heavy"
+      "group": "heavy",
+      "variants": [
+        "Orange",
+        "Cola-Lemon"
+      ],
+      "labelTemplate": "PET {variant} 0,85L"
     },
     {
       "code": "WAFER",
+      "category": "Przekąski",
       "name": "Wafle",
       "packSize": 12,
       "packageLabel": "zgrzewka",
       "pointsPerPack": 6,
-      "group": "fragile"
+      "group": "fragile",
+      "variants": [
+        "Ser",
+        "Zielona Cebulka",
+        "Texas BBQ",
+        "Czekolada"
+      ],
+      "labelTemplate": "Wafle {variant}"
     },
     {
       "code": "CHIPS",
+      "category": "Przekąski",
       "name": "Czipsy",
       "packSize": 6,
       "packageLabel": "zgrzewka",
       "pointsPerPack": 6,
-      "group": "light"
+      "group": "fragile",
+      "variants": [
+        "Bekon",
+        "Kurczak"
+      ],
+      "labelTemplate": "Czipsy {variant}"
+    },
+    {
+      "code": "BAR",
+      "category": "Przekąski",
+      "name": "Baton",
+      "packSize": 1,
+      "packageLabel": "szt.",
+      "pointsPerPack": 0.5,
+      "group": "tiny",
+      "variants": [
+        "Kokos",
+        "Słony Karmel",
+        "Masło Orzechowe"
+      ],
+      "labelTemplate": "Baton {variant}"
     },
     {
       "code": "CREATINE",
+      "category": "Suplementy",
       "name": "Kreatyna",
       "packSize": 1,
       "packageLabel": "szt.",
       "pointsPerPack": 1,
-      "group": "small"
+      "group": "small",
+      "variants": [
+        "Grape",
+        "Sour Apple",
+        "Arbuz",
+        "White",
+        "Mango",
+        "Cola-Lemon",
+        "Cola",
+        "Naturalna",
+        "Truskawka-Kiwi"
+      ],
+      "labelTemplate": "Kreatyna {variant}"
     },
     {
       "code": "CITRULLINE",
+      "category": "Suplementy",
       "name": "Cytrulina",
       "packSize": 1,
       "packageLabel": "szt.",
       "pointsPerPack": 1,
-      "group": "small"
+      "group": "small",
+      "variants": [
+        "Grape",
+        "Sour Apple",
+        "Arbuz",
+        "Cola-Lemon"
+      ],
+      "labelTemplate": "Cytrulina {variant}"
     },
     {
       "code": "PROTEIN",
+      "category": "Suplementy",
       "name": "Białko",
       "packSize": 1,
       "packageLabel": "szt.",
       "pointsPerPack": 1.5,
-      "group": "small"
-    },
-    {
-      "code": "VITAMIN",
-      "name": "Witaminy",
-      "packSize": 1,
-      "packageLabel": "szt.",
-      "pointsPerPack": 0.5,
-      "group": "tiny"
-    },
-    {
-      "code": "GEL",
-      "name": "Żel",
-      "packSize": 1,
-      "packageLabel": "szt.",
-      "pointsPerPack": 0.5,
-      "group": "tiny"
-    },
-    {
-      "code": "SAUCE_SWEET",
-      "name": "Sos słodki",
-      "packSize": 1,
-      "packageLabel": "szt.",
-      "pointsPerPack": 0.5,
-      "group": "tiny_sauce"
-    },
-    {
-      "code": "SAUCE_SALTY",
-      "name": "Sos słony",
-      "packSize": 1,
-      "packageLabel": "szt.",
-      "pointsPerPack": 0.5,
-      "group": "tiny_sauce"
-    },
-    {
-      "code": "BAR",
-      "name": "Batony",
-      "packSize": 1,
-      "packageLabel": "szt.",
-      "pointsPerPack": 0.5,
-      "group": "tiny"
+      "group": "small",
+      "variants": [
+        "Truskawka",
+        "Ciastko",
+        "Słony Karmel",
+        "Biała Czekolada",
+        "Mleczna Czekolada",
+        "Wanilia"
+      ],
+      "labelTemplate": "Białko {variant}"
     },
     {
       "code": "BOMBA",
+      "category": "Suplementy",
       "name": "Bomba",
       "packSize": 1,
       "packageLabel": "szt.",
       "pointsPerPack": 1,
-      "group": "small"
+      "group": "small",
+      "variants": [
+        "Grape",
+        "Cola-Lemon",
+        "Arbuz",
+        "Mango",
+        "Sour Apple"
+      ],
+      "labelTemplate": "Bomba {variant}"
+    },
+    {
+      "code": "GEL",
+      "category": "Suplementy",
+      "name": "Żel",
+      "packSize": 1,
+      "packageLabel": "szt.",
+      "pointsPerPack": 0.5,
+      "group": "tiny",
+      "variants": [
+        "Klasyk",
+        "Lemon",
+        "Grape"
+      ],
+      "labelTemplate": "Żel {variant}"
+    },
+    {
+      "code": "VITAMIN",
+      "category": "Suplementy",
+      "name": "Witaminy",
+      "packSize": 1,
+      "packageLabel": "szt.",
+      "pointsPerPack": 0.5,
+      "group": "tiny",
+      "variants": [
+        "Witamina C",
+        "Dobry Sen",
+        "Omega",
+        "Cynk",
+        "Magnez",
+        "Multiwitamina"
+      ],
+      "labelTemplate": "{variant}"
     },
     {
       "code": "BOMBA_SHOT",
+      "category": "Suplementy",
       "name": "Bomba Shot",
       "packSize": 1,
       "packageLabel": "szt.",
       "pointsPerPack": 0.5,
-      "group": "tiny"
+      "group": "tiny",
+      "variants": [],
+      "labelTemplate": "Bomba Shot"
     },
     {
       "code": "LIMITLESS",
+      "category": "Suplementy",
       "name": "Limitless",
       "packSize": 1,
       "packageLabel": "szt.",
       "pointsPerPack": 1,
-      "group": "small"
+      "group": "small",
+      "variants": [],
+      "labelTemplate": "Limitless"
+    },
+    {
+      "code": "SAUCE_SWEET",
+      "category": "Inne",
+      "name": "Sos słodki",
+      "packSize": 1,
+      "packageLabel": "szt.",
+      "pointsPerPack": 0.5,
+      "group": "tiny_sauce",
+      "variants": [
+        "Jagoda",
+        "Malina",
+        "Truskawka",
+        "Klon",
+        "Milky",
+        "Karmel",
+        "Cynamon"
+      ],
+      "labelTemplate": "Sos słodki {variant}"
+    },
+    {
+      "code": "SAUCE_SALTY",
+      "category": "Inne",
+      "name": "Sos słony",
+      "packSize": 1,
+      "packageLabel": "szt.",
+      "pointsPerPack": 0.5,
+      "group": "tiny_sauce",
+      "variants": [],
+      "labelTemplate": "Sos słony"
     },
     {
       "code": "COFFEE",
+      "category": "Inne",
       "name": "Kawa",
       "packSize": 1,
       "packageLabel": "szt.",
       "pointsPerPack": 1,
-      "group": "small"
+      "group": "small",
+      "variants": [],
+      "labelTemplate": "Kawa"
     }
   ],
   "notes": [
-    "Wafle nie mogą jechać z napojami.",
-    "2 zgrzewki wafli praktycznie zamykają paczkę.",
+    "Wafle i czipsy nie mogą jechać z napojami.",
+    "2 zgrzewki wafli praktycznie zamykają paczkę; dokładamy tylko pojedyncze witaminy.",
     "2 zgrzewki 330 ml lub miks 500+330 mogą przyjąć do 6 sosów na górze.",
-    "Reguły drobnicy są testowe."
+    "Reguły drobnicy są wersją testową i będą dopracowywane na prawdziwych zamówieniach."
   ]
 }
