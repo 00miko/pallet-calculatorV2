@@ -76,7 +76,9 @@ function showVariants(code){
  if(!p){box.style.display='none';return;}
  if(!p.variants||!p.variants.length){addRow(code,'');document.getElementById('productSelector').value='';box.style.display='none';return;}
  document.getElementById('variantTitle').textContent='Wybierz smak / wariant — '+p.name;box.style.display='block';
- p.variants.forEach(v=>{const b=document.createElement('button');b.type='button';b.className='variantbtn';b.textContent=v;b.addEventListener('click',()=>{addRow(code,v);document.getElementById('productSelector').value='';box.style.display='none';grid.innerHTML='';});grid.appendChild(b);});
+ p.variants.forEach(v=>{const b=document.createElement('button');b.type='button';b.className='variantbtn';b.textContent=v;b.addEventListener('click',()=>{
+  addRow(code,v);
+});grid.appendChild(b);});
 }
 function makeItems(){
  let large=[],small=[];
