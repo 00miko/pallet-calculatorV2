@@ -110,7 +110,7 @@
     },
     {
       "code": "WAFER",
-      "category": "Przekąski",
+      "category": "Jedzenie",
       "name": "Wafle",
       "packSize": 12,
       "packageLabel": "zgrzewka",
@@ -126,7 +126,7 @@
     },
     {
       "code": "CHIPS",
-      "category": "Przekąski",
+      "category": "Jedzenie",
       "name": "Czipsy",
       "packSize": 6,
       "packageLabel": "zgrzewka",
@@ -140,7 +140,7 @@
     },
     {
       "code": "BAR",
-      "category": "Przekąski",
+      "category": "Jedzenie",
       "name": "Baton",
       "packSize": 1,
       "packageLabel": "szt.",
